@@ -49,6 +49,8 @@ architecture LDD1 of ADD is
 
 begin
 	-- TODO: complete architecture description
+	
+	carry_sig(0) <= carry_in;
 	generate_adders: for i in 0 to (C_DATA_WIDTH - 1) generate
 		full_adders : FA1B
 			port map (

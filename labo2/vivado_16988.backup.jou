@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Oct 19 13:47:00 2020
+# Process ID: 16988
+# Current directory: C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/Labo2/labo2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3940 C:\Users\robbe\Documents\School\2020-2021\Digitaal Ontwerp\Labo2\labo2\labo2.xpr
+# Log file: C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/Labo2/labo2/vivado.log
+# Journal file: C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/Labo2/labo2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/Labo2/labo2/labo2.xpr}
+update_compile_order -fileset sources_1
+update_files -from_files {{C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/Labo2/labo2/labo2.srcs/sources_1/imports/sources/ADD.vhd}} -to_files {{C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/Labo2/LDD/LDD1/L2_ALU/sources/ADD.vhd}} -filesets [get_filesets *]
+update_compile_order -fileset sources_1
+add_files -norecurse {{C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/Labo2/labo2/labo2.srcs/sources_1/imports/sources/processor_pkg.vhd}}

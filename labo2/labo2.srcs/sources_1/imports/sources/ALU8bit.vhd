@@ -63,7 +63,6 @@ architecture Behavioral of ALU8bit is
     signal add_carry_in_i: std_logic := '0';
     signal add_carry_i   : std_logic := '0';
     signal zero_sig     : std_logic_vector(C_DATA_WIDTH-1 downto 0) := (others=>'0');
-    signal temp         : std_logic_vector(C_DATA_WIDTH-1 downto 0);
 
     
     -- we use a separate module for the addition/subtraction
@@ -91,10 +90,10 @@ begin
     -- not
     not_result_i <=   not X ;
     -- rr
-    rr_result_i <=   x(0) & X((C_DATA_WIDTH-1) downto 1);
+    rr_result_i <=   '0' & X((C_DATA_WIDTH-1) downto 1);
     -- & en gebruik maken van C_DATA_WIDTH en concatinate
     -- rl
-    rl_result_i <=  X((C_DATA_WIDTH-2) downto 0) & X((C_DATA_WIDTH-1));
+    rl_result_i <=  X((C_DATA_WIDTH-2) downto 0) & '0';
     -- swap
     swap_result_i <= X(4 downto 0) & X((C_DATA_WIDTH-1) downto 4); 
     
@@ -121,7 +120,7 @@ begin
     -- TODO: set 'result_i' to a specific operation result based on the selected operation 'op'
     -- result mux:
     -- multiplexer met with select
-    with op select Z <=
+    with op select result_i <=
         not_result_i when ALU_OP_NOT,
         and_result_i when ALU_OP_AND,
         or_result_i when ALU_OP_OR,
@@ -130,15 +129,23 @@ begin
         add_result_i when ALU_OP_SUB,
         rr_result_i when ALU_OP_RR,
         rl_result_i when ALU_OP_RL,
-        swap_result_i when ALU_OP_SWAP;
-                        
+        swap_result_i when ALU_OP_SWAP,
+        zero_sig when others;
+    
+    Z <= result_i;                  
     
     -- TODO: control the flags
     -- carry flag: 1 carry flag for SUB, ADD, RR and RL (based on op)
     --   don't forget that rotate left/right can also produce a carry
     --   you might need some extra signals
     -- met with select
-    cf <= add_carry_i ;
+    with op select cf <= 
+        add_carry_i when ALU_OP_ADD,
+        add_carry_i when ALU_OP_SUB,
+        X(0) when ALU_OP_RR,
+        X(C_DATA_WIDTH-1) when ALU_OP_RL,
+        '0' when others;
+     
 
     -- zero flag
     -- met extra signaal met allemaal nullen
