@@ -44,14 +44,34 @@ end program_counter;
 
 architecture Behavioral of program_counter is
     -- TODO: (optionally) declare signals
-    signal zero_sig : std_logic_vector(C_PC_WIDTH-1 downto 0) := (others=>'0');
 
 begin
 
     -- TODO: write VHDL process
-    process(clk, reset, up, le, pc_in, zero_sig) begin
-        if rest = '1' then
-            pc_out <= zero_sig;
-        elsif rising_edge(clk)
+    process(clk, reset) is
+        variable pc_out_var: std_logic_vector((C_PC_WIDTH-1) downto 0) := (others=>'0');
+        variable zero_var : std_logic_vector(C_PC_WIDTH-1 downto 0) := (others=>'0');
+        variable step_size : std_logic_vector(C_PC_WIDTH-1 downto 0) := (others=>'0');
 
+
+    begin
+        step_size := std_logic_vector(TO_UNSIGNED(C_PC_STEP, step_size'length));
+
+        if reset = '1' then
+            pc_out_var := zero_var;
+        elsif rising_edge(clk) then
+           if  up = '1' then
+            pc_out_var := pc_out_var + step_size;
+           else
+            if le = '1' then
+                pc_out_var := pc_in;
+            end if;
+           end if;
+        end if;
+        
+    pc_out <= pc_out_var;
+            
+    end process;
+    
+                            
 end Behavioral;

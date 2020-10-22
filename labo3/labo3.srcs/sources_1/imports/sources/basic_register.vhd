@@ -48,7 +48,7 @@ architecture Behavioral of basic_register is
 begin
       
     -- TODO: write VHDL process
-    process (clk, reset, le) begin
+    process (clk, reset) begin
         if reset = '1' then
             data_out <= zero_sig;
         elsif rising_edge(clk) and le = '1' then
@@ -57,19 +57,4 @@ begin
 
         
    end process;
---    
---        process (clk, reset, le, previous_data_out_sig, data_out_sig) begin
---        if reset = '1' then
---            data_out_sig <= zero_sig;
---        elsif rising_edge(clk) and le = '1' then
---            data_out_sig <= data_in;
---        elsif rising_edge(clk) and le = '0' then
---            data_out_sig <= previous_data_out_sig ;
---        end if;
---        
---        data_out <= data_out_sig;
---        previous_data_out_sig <= data_out_sig;
---       
---    end process;
-
 end Behavioral;
