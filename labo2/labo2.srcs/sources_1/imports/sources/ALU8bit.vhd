@@ -95,7 +95,7 @@ begin
     -- rl
     rl_result_i <=  X((C_DATA_WIDTH-2) downto 0) & '0';
     -- swap
-    swap_result_i <= X(4 downto 0) & X((C_DATA_WIDTH-1) downto 4); 
+    swap_result_i <= X(3 downto 0) & X((C_DATA_WIDTH-1) downto 4); 
     
     -- TODO: have a look at how this module is instantiated
     -- Ripple carry adder instantiation
@@ -141,7 +141,7 @@ begin
     -- met with select
     with op select cf <= 
         add_carry_i when ALU_OP_ADD,
-        add_carry_i when ALU_OP_SUB,
+        not add_carry_i when ALU_OP_SUB,
         X(0) when ALU_OP_RR,
         X(C_DATA_WIDTH-1) when ALU_OP_RL,
         '0' when others;

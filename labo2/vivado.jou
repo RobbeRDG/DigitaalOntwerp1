@@ -2,77 +2,38 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Tue Oct 20 08:20:09 2020
-# Process ID: 15044
-# Current directory: C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/DigitaalOntwerp1/labo2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10432 C:\Users\robbe\Documents\School\2020-2021\Digitaal Ontwerp\DigitaalOntwerp1\labo2\labo2.xpr
-# Log file: C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/DigitaalOntwerp1/labo2/vivado.log
-# Journal file: C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/DigitaalOntwerp1/labo2\vivado.jou
+# Start of session at: Sat Oct 24 13:55:19 2020
+# Process ID: 12316
+# Current directory: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15092 C:\Users\robbe\Documents\School\2020-2021\DigitaalOntwerp\Labo\DigitaalOntwerp1\labo2\labo2.xpr
+# Log file: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo2/vivado.log
+# Journal file: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo2\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/DigitaalOntwerp1/labo2/labo2.xpr}
+open_project C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo2/labo2.xpr
 update_compile_order -fileset sources_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-import_files -fileset sim_1 -norecurse {{C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/LDD/LDD1/L2_ALU/sources/ADD_tb.vhd} {C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/LDD/LDD1/L2_ALU/sources/ALU_tb.vhd}}
-update_compile_order -fileset sim_1
-update_compile_order -fileset sim_1
 launch_simulation
-source ADD_tb.tcl
+reset_simulation -simset sim_1 -mode behavioral
+launch_simulation
+launch_simulation
+source ALU_tb.tcl
 close_sim
 launch_simulation
-source ADD_tb.tcl
-add_bp {C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/DigitaalOntwerp1/labo2/labo2.srcs/sources_1/imports/sources/ADD.vhd} 63
-remove_bps -all
+source ALU_tb.tcl
 close_sim
 launch_simulation
-source ADD_tb.tcl
+source ALU_tb.tcl
 close_sim
-launch_simulation
-source ADD_tb.tcl
-set_property top ALU_tb [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-update_compile_order -fileset sim_1
-launch_simulation
-close_sim
-launch_simulation
-launch_simulation
 set_property top ADD_tb [get_filesets sim_1]
 set_property top_lib xil_defaultlib [get_filesets sim_1]
 update_compile_order -fileset sim_1
 launch_simulation
 source ADD_tb.tcl
 close_sim
+launch_simulation
 set_property top ALU_tb [get_filesets sim_1]
 set_property top_lib xil_defaultlib [get_filesets sim_1]
 update_compile_order -fileset sim_1
 launch_simulation
-close_project
-create_project labo3 {C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/DigitaalOntwerp1/labo3} -part xc7a100tcsg324-1
-add_files -norecurse {{C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/LDD/LDD1/L3_Register/sources/basic_register.vhd}}
-import_files -force -norecurse
-update_compile_order -fileset sources_1
-close_project
-open_project {C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/DigitaalOntwerp1/labo2/labo2.xpr}
-update_compile_order -fileset sources_1
-close_project
-open_project {C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/DigitaalOntwerp1/labo3/labo3.xpr}
-update_compile_order -fileset sources_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-import_files -fileset sim_1 -norecurse {{C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/LDD/LDD1/L3_Register/sources/basic_register_tb.vhd}}
-update_compile_order -fileset sim_1
-update_compile_order -fileset sim_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-launch_simulation
-source basic_register_tb.tcl
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
+source ALU_tb.tcl
 close_sim
-launch_simulation
-source basic_register_tb.tcl
-close_sim
-launch_simulation
-source basic_register_tb.tcl
-close_sim
-import_files -norecurse {{C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/LDD/LDD1/L3_Register/sources/program_counter.vhd}}
-update_compile_order -fileset sources_1
