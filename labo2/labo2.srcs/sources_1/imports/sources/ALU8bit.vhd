@@ -15,7 +15,6 @@ library IEEE;
 library processor_pkg;
 use IEEE.STD_LOGIC_1164.ALL;
 use work.processor_pkg.ALL;
--- TODO: use processor_pkg from the work library
 
 entity ALU8bit is
     generic(
@@ -79,7 +78,6 @@ architecture Behavioral of ALU8bit is
         );
     end component;
 begin
-    -- TODO: complete the following lines to perform logical operations
     -- implementation of some operations
     -- and
     and_result_i <=  X and Y ;
@@ -91,13 +89,11 @@ begin
     not_result_i <=   not X ;
     -- rr
     rr_result_i <=   '0' & X((C_DATA_WIDTH-1) downto 1);
-    -- & en gebruik maken van C_DATA_WIDTH en concatinate
     -- rl
     rl_result_i <=  X((C_DATA_WIDTH-2) downto 0) & '0';
     -- swap
     swap_result_i <= X(3 downto 0) & X((C_DATA_WIDTH-1) downto 4); 
     
-    -- TODO: have a look at how this module is instantiated
     -- Ripple carry adder instantiation
     ADDER : ADD
     generic map(
@@ -111,15 +107,13 @@ begin
         carry_out => add_carry_i
     );
 
-    -- TODO: change the adder's secondary input and carry in, based on the operation (addition/subtraction)
     -- addition and subtraction
     -- met when else
     add_secondary_input_i <= not Y when op = ALU_OP_SUB else Y ;
     add_carry_in_i <= '1' when op = ALU_OP_SUB else '0' ;
     
-    -- TODO: set 'result_i' to a specific operation result based on the selected operation 'op'
+    -- set 'result_i' to a specific operation result based on the selected operation 'op'
     -- result mux:
-    -- multiplexer met with select
     with op select result_i <=
         not_result_i when ALU_OP_NOT,
         and_result_i when ALU_OP_AND,
@@ -132,26 +126,24 @@ begin
         swap_result_i when ALU_OP_SWAP,
         zero_sig when others;
     
+    -- point the chosen result_i to the output
     Z <= result_i;                  
     
-    -- TODO: control the flags
+    -- control the flags
     -- carry flag: 1 carry flag for SUB, ADD, RR and RL (based on op)
-    --   don't forget that rotate left/right can also produce a carry
-    --   you might need some extra signals
-    -- met with select
     with op select cf <= 
-        add_carry_i when ALU_OP_ADD,
-        not add_carry_i when ALU_OP_SUB,
-        X(0) when ALU_OP_RR,
-        X(C_DATA_WIDTH-1) when ALU_OP_RL,
-        '0' when others;
+        add_carry_i when ALU_OP_ADD,            -- take the output carry from the ADD component
+        not add_carry_i when ALU_OP_SUB,        -- take the inverse of the output carry from the ADD component
+        X(0) when ALU_OP_RR,                    -- when RR, place least significant bit in carry
+        X(C_DATA_WIDTH-1) when ALU_OP_RL,       -- when RL, place most significant bit in carry
+        '0' when others;                        -- default case
      
 
     -- zero flag
-    -- met extra signaal met allemaal nullen
-    zf <= '1' when result_i = zero_sig else '0';
+    zf <= '1' when result_i = zero_sig else '0'; -- set to zero when result_i is vector of zeros
     
     -- equal, smaller, greater flag
+    -- compare the two input signals
     ef <= '1' when X = Y else '0' ;
     gf <= '1' when X > Y else '0' ;
     sf <= '1' when X < Y else '0';

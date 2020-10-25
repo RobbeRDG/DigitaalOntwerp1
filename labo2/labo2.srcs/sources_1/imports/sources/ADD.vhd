@@ -26,8 +26,6 @@ entity ADD is
 end entity;
 
 architecture LDD1 of ADD is
-	-- TODO: list of signals and components
-
 	-- signals
 	-- intermediate carry and sum signals
 	signal carry_sig : std_logic_vector((C_DATA_WIDTH) downto 0);
@@ -48,9 +46,10 @@ architecture LDD1 of ADD is
 	end component FA1B;
 
 begin
-	-- TODO: complete architecture description
-	
+    -- initialize the first carry bit
 	carry_sig(0) <= carry_in;
+	
+	-- generate a full adder for every bit of the input
 	generate_adders: for i in 0 to (C_DATA_WIDTH - 1) generate
 		full_adders : FA1B
 			port map (
@@ -62,8 +61,7 @@ begin
 			);
 	end generate generate_adders;
  
+    -- point the final carry bit to the carry output port
 	carry_out <= carry_sig(C_DATA_WIDTH);
-
-
 
 end LDD1;

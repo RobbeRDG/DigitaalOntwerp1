@@ -16,7 +16,6 @@ use ieee.numeric_std.all;
 
 ENTITY FA1B IS 
 	PORT(
-		-- TODO: complete entity declaration
 		i_A  : in std_logic;
         i_B  : in std_logic;
         i_carry : in std_logic;
@@ -29,7 +28,7 @@ END entity;
 
 ARCHITECTURE LDD1 OF FA1B IS 
 BEGIN
-	-- TODO: complete architecture
+	-- full adder architecture
     o_result   <= i_A xor i_B xor i_carry;
     o_carry <= ((i_A xor i_B) and i_carry) or (i_A and i_B);
 	
