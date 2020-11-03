@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Institution: KU Leuven
--- Students: firstname lastname and other guy/girl/...
+-- Students: Martijn Vanderschelden & Robbe De Groeve 
 -- 
 -- Module Name: basic_register - Behavioral
 -- Course Name: Lab Digital Design
@@ -37,24 +37,21 @@ entity basic_register is
     );
 end basic_register;
 
-architecture Behavioral of basic_register is
-    -- TODO: (optionally) declare signals
-    signal zero_sig : std_logic_vector(C_DATA_WIDTH-1 downto 0) := (others=>'0');
---    signal previous_data_out_sig : std_logic_vector(C_DATA_WIDTH-1 downto 0) := (others=>'0');
---    signal data_out_sig : std_logic_vector(C_DATA_WIDTH-1 downto 0);
- 
-    
-    
+architecture Behavioral of basic_register is     
 begin
-      
-    -- TODO: write VHDL process
-    process (clk, reset) begin
+    --VHDL process
+    process (clk, reset) is
+        --Zero vector
+        variable zero_var : std_logic_vector(C_DATA_WIDTH-1 downto 0) := (others=>'0');
+    
+    begin
         if reset = '1' then
-            data_out <= zero_sig;
+            --If reset is '1' set the output to zero vector
+            data_out <= zero_var;  
         elsif rising_edge(clk) and le = '1' then
-            data_out <= data_in;
+            --If le is set and clock is high, connect input to output
+            data_out <= data_in;   
         end if;
-
-        
+       
    end process;
 end Behavioral;

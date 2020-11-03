@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Institution: KU Leuven
--- Students: firstname lastname and other guy/girl/...
+-- Students: Martijn Vanderschelden & Robbe De Groeve 
 -- 
 -- Module Name: program_counter - Behavioral
 -- Course Name: Lab Digital Design
@@ -20,7 +20,7 @@ use IEEE.std_logic_arith.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
-use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL; --used for conversion between natural and std_logic_vector
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -43,32 +43,38 @@ entity program_counter is
 end program_counter;
 
 architecture Behavioral of program_counter is
-    -- TODO: (optionally) declare signals
 
 begin
-
-    -- TODO: write VHDL process
+--VHDL process 
     process(clk, reset) is
+        --output variable
         variable pc_out_var: std_logic_vector((C_PC_WIDTH-1) downto 0) := (others=>'0');
+        --zero vector
         variable zero_var : std_logic_vector(C_PC_WIDTH-1 downto 0) := (others=>'0');
-        variable step_size : std_logic_vector(C_PC_WIDTH-1 downto 0) := (others=>'0');
+        --step size vector
+        variable step_size_var : std_logic_vector(C_PC_WIDTH-1 downto 0) := (others=>'0');
 
 
     begin
-        step_size := std_logic_vector(TO_UNSIGNED(C_PC_STEP, step_size'length));
+        --convert the natural C_PC_STEP to an std_logic_vector
+        step_size_var := std_logic_vector(TO_UNSIGNED(C_PC_STEP, step_size_var'length));
 
         if reset = '1' then
+            --If reset is '1' set the output to zero vector
             pc_out_var := zero_var;
         elsif rising_edge(clk) then
            if  up = '1' then
-            pc_out_var := pc_out_var + step_size;
+            --If up is high, raise the output variable by the step size
+            pc_out_var := pc_out_var + step_size_var;
            else
             if le = '1' then
+                --if le is high, connect the input to the output variable
                 pc_out_var := pc_in;
             end if;
            end if;
         end if;
-        
+     
+    --After each run, connect the output variable to the output port    
     pc_out <= pc_out_var;
             
     end process;

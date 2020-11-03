@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Oct 25 09:31:55 2020
+# Process ID: 13132
+# Current directory: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12956 C:\Users\robbe\Documents\School\2020-2021\DigitaalOntwerp\Labo\DigitaalOntwerp1\labo2\labo2.xpr
+# Log file: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo2/vivado.log
+# Journal file: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo2/labo2.xpr
+update_compile_order -fileset sources_1

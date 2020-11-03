@@ -2,128 +2,26 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Oct 22 13:34:22 2020
-# Process ID: 22056
-# Current directory: C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/DigitaalOntwerp1/labo3
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25076 C:\Users\robbe\Documents\School\2020-2021\Digitaal Ontwerp\DigitaalOntwerp1\labo3\labo3.xpr
-# Log file: C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/DigitaalOntwerp1/labo3/vivado.log
-# Journal file: C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/DigitaalOntwerp1/labo3\vivado.jou
+# Start of session at: Tue Nov  3 11:44:24 2020
+# Process ID: 7496
+# Current directory: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2520 C:\Users\robbe\Documents\School\2020-2021\DigitaalOntwerp\Labo\DigitaalOntwerp1\labo3\labo3.xpr
+# Log file: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/vivado.log
+# Journal file: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/DigitaalOntwerp1/labo3/labo3.xpr}
+open_project C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.xpr
 update_compile_order -fileset sources_1
-set_property top program_counter [get_filesets sim_1]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property top basic_register_tb [get_filesets sim_1]
 set_property top_lib xil_defaultlib [get_filesets sim_1]
 update_compile_order -fileset sim_1
 launch_simulation
-source program_counter.tcl
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-import_files -fileset sim_1 -norecurse {{C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/LDD/LDD1/L3_Register/sources/program_counter_tb.vhd}}
-update_compile_order -fileset sim_1
-close_sim
-set_property top program_counter_tb [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-update_compile_order -fileset sim_1
-launch_simulation
-source program_counter_tb.tcl
-close_sim
-launch_simulation
-source program_counter_tb.tcl
-close_sim
-launch_simulation
-source program_counter_tb.tcl
-close_sim
-launch_simulation
-source program_counter_tb.tcl
-close_sim
-launch_simulation
-source program_counter_tb.tcl
-close_sim
-launch_simulation
-source program_counter_tb.tcl
-import_files -norecurse {{C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/LDD/LDD1/L3_Register/sources/updown_counter.vhd}}
-update_compile_order -fileset sources_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-import_files -fileset sim_1 -norecurse {{C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/LDD/LDD1/L3_Register/sources/updown_counter_tb.vhd}}
-update_compile_order -fileset sim_1
-close_sim
-launch_simulation
-source program_counter_tb.tcl
-close_sim
-launch_simulation
-source program_counter_tb.tcl
-close_sim
-launch_simulation
-source program_counter_tb.tcl
-close_sim
-launch_simulation
-source program_counter_tb.tcl
+source basic_register_tb.tcl
 close_sim
 set_property top updown_counter_tb [get_filesets sim_1]
 set_property top_lib xil_defaultlib [get_filesets sim_1]
 update_compile_order -fileset sim_1
 launch_simulation
 source updown_counter_tb.tcl
-close_sim
-launch_simulation
-source updown_counter_tb.tcl
-close_sim
-launch_simulation
-source updown_counter_tb.tcl
-close_sim
-launch_simulation
-source updown_counter_tb.tcl
-close_sim
-launch_simulation
-source updown_counter_tb.tcl
-close_sim
-launch_simulation
-source updown_counter_tb.tcl
-close_sim
-set_property top program_counter_tb [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-update_compile_order -fileset sim_1
-launch_simulation
-source program_counter_tb.tcl
-close_sim
-launch_simulation
-source program_counter_tb.tcl
-close_sim
-launch_simulation
-source program_counter_tb.tcl
-close_sim
-launch_simulation
-source program_counter_tb.tcl
-close_sim
-launch_simulation
-source program_counter_tb.tcl
-close_sim
-set_property top updown_counter_tb [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-update_compile_order -fileset sim_1
-launch_simulation
-source updown_counter_tb.tcl
-close_sim
-launch_simulation
-source updown_counter_tb.tcl
-create_project Labo4 {C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/DigitaalOntwerp1/Labo4} -part xc7a100tcsg324-1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-import_files -fileset sim_1 -norecurse {{C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/LDD/LDD1/L4_DataPath/sources/register_file.vhd} {C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/DigitaalOntwerp1/labo3/labo3.srcs/sources_1/imports/sources/basic_register.vhd}}
-update_compile_order -fileset sim_1
-update_compile_order -fileset sim_1
-update_compile_order -fileset sim_1
-update_compile_order -fileset sim_1
-update_compile_order -fileset sim_1
-open_project {C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/Labo2/labo2/labo2.xpr}
-update_compile_order -fileset sources_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-import_files -fileset sim_1 -norecurse {{C:/Users/robbe/Documents/School/2020-2021/Digitaal Ontwerp/LDD/LDD1/L2_ALU/sources/ALU_tb.vhd}}
-update_compile_order -fileset sim_1
-update_compile_order -fileset sim_1
-launch_simulation
-current_project Labo4
-close_project
-current_project labo3
-close_sim
-close_project
-launch_simulation
