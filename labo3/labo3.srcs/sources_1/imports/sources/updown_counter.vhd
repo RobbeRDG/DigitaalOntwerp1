@@ -49,8 +49,10 @@ begin
         variable zero_var : std_logic_vector(C_NR_BITS-1 downto 0) := (others=>'0');
         --max value
         variable max_var: std_logic_vector(C_NR_BITS-1 downto 0) := (others=>'1');
-        --current count
-        variable count_var : std_logic_vector(C_NR_BITS-1 downto 0) := (others=>'0');
+        --old count
+        variable old_count_var : std_logic_vector(C_NR_BITS-1 downto 0) := (others=>'0');
+        --next count
+        variable next_count_var : std_logic_vector(C_NR_BITS-1 downto 0) := (others=>'0');
         --overflow flag
         variable overflow_var: std_logic := '0';
         --underflow flag
@@ -59,33 +61,33 @@ begin
         begin
         if reset = '1' then
             --When resetting, set everything to 0
-            count_var := zero_var;
+            next_count_var := zero_var;
             overflow_var := '0';
             underflow_var := '0';
         elsif rising_edge(clk) then
             if up = '1' then
-                if count_var = max_var then
+                if old_count_var = max_var then
                     --If the count has reached the maximum, keep current count 
                     --and set the overflow flag 
-                    count_var := count_var;
+                    next_count_var := old_count_var;
                     overflow_var := '1';
                     underflow_var := '0';
                 else
                     --raise count by 1 bit
-                    count_var := count_var + '1';
+                    next_count_var := old_count_var + '1';
                     overflow_var := '0';
                     underflow_var := '0';
                 end if;           
             elsif down = '1' then
-                if count_var = zero_var then
+                if old_count_var = zero_var then
                     --If the count has reached the minimum, keep current count 
                     --and set the underflow flag 
-                    count_var := count_var;
+                    next_count_var := old_count_var;
                     underflow_var := '1';
                     overflow_var := '0';
                 else
                     --lower count by 1 bit
-                    count_var := count_var - '1';
+                    next_count_var := old_count_var - '1';
                     overflow_var := '0';
                     underflow_var := '0';
                 end if;
@@ -93,9 +95,12 @@ begin
         end if;
         
      --After each run, connect the variables to the corresponding ports    
-     count <= count_var;
+     count <= next_count_var;
      underflow <= underflow_var;
      overflow <= overflow_var;
+     
+     --set the old count to the next count for the next process run
+     old_count_var := next_count_var;
             
      end process;
      

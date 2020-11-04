@@ -47,8 +47,10 @@ architecture Behavioral of program_counter is
 begin
 --VHDL process 
     process(clk, reset) is
-        --output variable
-        variable pc_out_var: std_logic_vector((C_PC_WIDTH-1) downto 0) := (others=>'0');
+        --old output variable
+        variable old_pc_out_var: std_logic_vector((C_PC_WIDTH-1) downto 0) := (others=>'0');
+        --next output variable
+        variable next_pc_out_var: std_logic_vector((C_PC_WIDTH-1) downto 0) := (others=>'0');
         --zero vector
         variable zero_var : std_logic_vector(C_PC_WIDTH-1 downto 0) := (others=>'0');
         --step size vector
@@ -61,21 +63,24 @@ begin
 
         if reset = '1' then
             --If reset is '1' set the output to zero vector
-            pc_out_var := zero_var;
+            next_pc_out_var := zero_var;
         elsif rising_edge(clk) then
            if  up = '1' then
             --If up is high, raise the output variable by the step size
-            pc_out_var := pc_out_var + step_size_var;
+            next_pc_out_var := old_pc_out_var + step_size_var;
            else
             if le = '1' then
                 --if le is high, connect the input to the output variable
-                pc_out_var := pc_in;
+                next_pc_out_var := pc_in;
             end if;
            end if;
         end if;
      
     --After each run, connect the output variable to the output port    
-    pc_out <= pc_out_var;
+    pc_out <= next_pc_out_var;
+    
+    --Set the old pc out for the next process run
+    old_pc_out_var := next_pc_out_var;
             
     end process;
     
