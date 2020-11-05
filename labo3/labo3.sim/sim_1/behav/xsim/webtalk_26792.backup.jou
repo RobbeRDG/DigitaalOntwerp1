@@ -2,11 +2,11 @@
 # Webtalk v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Wed Nov  4 20:59:40 2020
-# Process ID: 9524
+# Start of session at: Wed Nov  4 18:04:46 2020
+# Process ID: 26792
 # Current directory: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.sim/sim_1/behav/xsim/xsim.dir/basic_register_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.sim/sim_1/behav/xsim/xsim.dir/program_counter_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.sim/sim_1/behav/xsim/xsim.dir/basic_register_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+source C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.sim/sim_1/behav/xsim/xsim.dir/program_counter_tb_behav/webtalk/xsim_webtalk.tcl -notrace
