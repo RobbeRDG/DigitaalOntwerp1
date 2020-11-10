@@ -60,8 +60,8 @@ architecture Behavioral of register_file is
     );
     end component;
 begin
-    generate_
-    generate_registers: for i in 0 to (C_NR_REGS - 1) generate
+    generate_registers: 
+    for i in 0 to (C_NR_REGS - 1) generate
         registers : basic_register
             port map (
                 clk => clk,
@@ -69,7 +69,7 @@ begin
                 le => le_sig & in_sel_sig(i),
                 data_in => data_in,
                 data_out => data_out
-    end generate;         
+    end generate generate_registers;         
                 
                 
                 
