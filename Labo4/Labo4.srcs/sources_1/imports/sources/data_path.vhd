@@ -148,13 +148,13 @@ begin
     
     
     -- CPU bus control
-    cpu_bus_i <= dibr when Rsource = "000" else
-                 z_i when Rsource = "000" else
-                 pc when Rsource = "001" else
-                 IV when Rsource = "010" else
-                 reg_file_out_i when Rsource = "011" else
-                 sp when Rsource = "100" else
-                 ir_l when Rsource = "101";
+    cpu_bus_i <= dibr when cpu_bus_sel = SFR_DBR else
+                 z_i when cpu_bus_sel = SFR_Z else
+                 pc when cpu_bus_sel = SFR_PC else
+                 IV when cpu_bus_sel = SFR_IV else
+                 reg_file_out_i when cpu_bus_sel = GP_REG else
+                 sp when cpu_bus_sel = SFR_SP else
+                 ir_l when cpu_bus_sel = SFR_IR_L;
     
     -- ALU secondary input (Y register)
     B_REGX : basic_register
@@ -187,7 +187,7 @@ begin
     -- ALU flags register
     B_REGY : basic_register
     generic map (
-        C_DATA_WIDTH => C_DATA_WIDTH
+        C_DATA_WIDTH => C_NR_FLAGS
     )
     port map(
         clk => clk,
@@ -207,35 +207,33 @@ begin
          Y => y_i,
          Z => alu_out_i,
         op => alu_op,
-        zf => flags_i(C_ZF),
-        cf => flags_i(C_CF),
-        ef => flags_i(C_EF),
-        gf => flags_i(C_GF),
-        sf => flags_i(C_SF)
+        zf => alu_flags_i(C_ZF),
+        cf => alu_flags_i(C_CF),
+        ef => alu_flags_i(C_EF),
+        gf => alu_flags_i(C_GF),
+        sf => alu_flags_i(C_SF)
     );
     
     
     
     -- register file register selection decoding
-    reg_file_in_sel_i <= "00000000" when Rdestination = "000" else
-                         "00000001" when Rdestination = "000" else
-                         "00000010" when Rdestination = "001" else
-                         "00000100" when Rdestination = "010" else
-                         "00001000" when Rdestination = "011" else
-                         "00010000" when Rdestination = "100" else
-                         "00100000" when Rdestination = "101" else
-                         "01000000" when Rdestination = "110" else
-                         "10000000" when Rdestination = "111";
+    reg_file_in_sel_i <= "00000001" when Rdestination = REGFILE_R0 else
+                         "00000010" when Rdestination = REGFILE_R1 else
+                         "00000100" when Rdestination = REGFILE_R2 else
+                         "00001000" when Rdestination = REGFILE_R3 else
+                         "00010000" when Rdestination = REGFILE_R4 else
+                         "00100000" when Rdestination = REGFILE_R5 else
+                         "01000000" when Rdestination = REGFILE_R6 else
+                         "10000000" when Rdestination = REGFILE_R7; 
                          
-    reg_file_out_sel_i <= "00000000" when Rsource = "000" else
-                          "00000001" when Rsource = "000" else
-                          "00000010" when Rsource = "001" else
-                          "00000100" when Rsource = "010" else
-                          "00001000" when Rsource = "011" else
-                          "00010000" when Rsource = "100" else
-                          "00100000" when Rsource = "101" else
-                          "01000000" when Rsource = "110" else
-                          "10000000" when Rsource = "111";                      
+    reg_file_out_sel_i <= "00000001" when Rsource = REGFILE_R0 else
+                          "00000010" when Rsource = REGFILE_R1 else
+                          "00000100" when Rsource = REGFILE_R2 else
+                          "00001000" when Rsource = REGFILE_R3 else
+                          "00010000" when Rsource = REGFILE_R4 else
+                          "00100000" when Rsource = REGFILE_R5 else
+                          "01000000" when Rsource = REGFILE_R6 else
+                          "10000000" when Rsource = REGFILE_R7;                      
                          
     
 
