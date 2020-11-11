@@ -141,30 +141,119 @@ architecture Behavioral of data_path is
 begin
     -- TODO: complete description
     -- Outputs (map to internal signals)
-
+    cpu_bus <= cpu_bus_i;
+    flags <= flags_i;
     
     -- Inputs (map to internal signals <optional>)
-
+    
     
     -- CPU bus control
-    
+    cpu_bus_i <= dibr when Rsource = "000" else
+                 z_i when Rsource = "000" else
+                 pc when Rsource = "001" else
+                 IV when Rsource = "010" else
+                 reg_file_out_i when Rsource = "011" else
+                 sp when Rsource = "100" else
+                 ir_l when Rsource = "101";
     
     -- ALU secondary input (Y register)
+    B_REGX : basic_register
+    generic map (
+        C_DATA_WIDTH => C_DATA_WIDTH
+    )
+    port map(
+        clk => clk,
+        reset => reset,
+        le => y_le,
+        data_in => cpu_bus_i,
+        data_out => y_i
+    );
 
     
     -- ALU output (Z register)
+    B_REGZ : basic_register
+    generic map (
+        C_DATA_WIDTH => C_DATA_WIDTH
+    )
+    port map(
+        clk => clk,
+        reset => reset,
+        le => z_le,
+        data_in => alu_out_i,
+        data_out => z_i
+    );    
 
     
     -- ALU flags register
-
+    B_REGY : basic_register
+    generic map (
+        C_DATA_WIDTH => C_DATA_WIDTH
+    )
+    port map(
+        clk => clk,
+        reset => reset,
+        le => flags_le,
+        data_in => alu_flags_i,
+        data_out => flags_i
+    );
     
     -- ALU
-
+    ALU : ALU8bit
+    generic map (
+        C_DATA_WIDTH => C_DATA_WIDTH
+    )
+    port map(
+         X => cpu_bus_i,
+         Y => y_i,
+         Z => alu_out_i,
+        op => alu_op,
+        zf => flags_i(C_ZF),
+        cf => flags_i(C_CF),
+        ef => flags_i(C_EF),
+        gf => flags_i(C_GF),
+        sf => flags_i(C_SF)
+    );
+    
+    
     
     -- register file register selection decoding
-
+    reg_file_in_sel_i <= "00000000" when Rdestination = "000" else
+                         "00000001" when Rdestination = "000" else
+                         "00000010" when Rdestination = "001" else
+                         "00000100" when Rdestination = "010" else
+                         "00001000" when Rdestination = "011" else
+                         "00010000" when Rdestination = "100" else
+                         "00100000" when Rdestination = "101" else
+                         "01000000" when Rdestination = "110" else
+                         "10000000" when Rdestination = "111";
+                         
+    reg_file_out_sel_i <= "00000000" when Rsource = "000" else
+                          "00000001" when Rsource = "000" else
+                          "00000010" when Rsource = "001" else
+                          "00000100" when Rsource = "010" else
+                          "00001000" when Rsource = "011" else
+                          "00010000" when Rsource = "100" else
+                          "00100000" when Rsource = "101" else
+                          "01000000" when Rsource = "110" else
+                          "10000000" when Rsource = "111";                      
+                         
+    
 
     -- register file
+    REG : register_file
+    generic map (
+        C_DATA_WIDTH => C_DATA_WIDTH,
+        C_NR_REGS => C_NR_REGS
+    )
+    port map(
+        clk => clk,
+        reset => reset,
+        le => reg_file_le,
+        in_sel => reg_file_in_sel_i,
+        out_sel => reg_file_out_sel_i,
+        data_in => cpu_bus_i,
+        data_out => reg_file_out_i
+    );
 
     
 end Behavioral;
