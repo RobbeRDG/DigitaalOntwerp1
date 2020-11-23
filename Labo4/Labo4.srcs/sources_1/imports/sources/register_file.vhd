@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Institution: KU Leuven
--- Students: firstname lastname and other guy/girl/...
+-- Students: Martijn Vanderschelden and Robbe De Groeve
 -- 
 -- Module Name: register_file - Behavioral
 -- Course Name: Lab Digital Design
@@ -46,13 +46,12 @@ architecture Behavioral of register_file is
     type register_bus is array (C_NR_REGS-1 downto 0) of std_logic_vector(C_DATA_WIDTH-1 downto 0);
 
     -- signals
-    signal selection_i : std_logic_vector((C_NR_REGS-1) downto 0); 
-    signal le_vector_i: std_logic_vector((C_NR_REGS-1) downto 0);
+    signal selection_i : std_logic_vector((C_NR_REGS-1) downto 0); -- input selection that is synced to the le input
+    signal le_vector_i: std_logic_vector((C_NR_REGS-1) downto 0); -- vector representation of le input
     signal zero_vector_i: std_logic_vector((C_DATA_WIDTH-1) downto 0) := (others => '0');
-    signal register_input_i : register_bus;
-    signal register_output_i : register_bus;
-    signal register_output_selection_i : register_bus;
-    signal register_or_i : register_bus;
+    signal register_output_i : register_bus;  -- contains all basic register outputs
+    signal register_output_selection_i : register_bus; -- contians only the selected output
+    signal register_or_i : register_bus; -- OR-gates logic
     
 
     -- components
@@ -71,16 +70,15 @@ architecture Behavioral of register_file is
     
     
     
-begin
-    -- TODO: describe how it's all connected and how it behaves
-    
-    --generate the selection_i signal
+begin  
+    -- Create a le vector from the le input
     le_vector_i <= (others => '0') when le = '0' else
                    (others => '1') when le = '1';
+    -- Generate the selection_i signal
     selection_i <= le_vector_i and in_sel;
     
     
-    --Generate the registers with the corresponding input values
+    -- Generate the registers with the corresponding in-/output values
     GEN_REG: 
     for I in 0 to (C_NR_REGS-1) generate                     
       REGX : basic_register 
@@ -88,23 +86,27 @@ begin
             clk => clk,
             reset => reset,
             data_in => data_in,
-            le => selection_i(I),
-            data_out => register_output_i(I)
+            le => selection_i(I), --c onnect register with corresponding bit in selection vector
+            data_out => register_output_i(I) -- place all basic register outputs in the register_output vector
         );
       
-      --Output multiplexer  
+      -- Output multiplexer, only allow the selected output else set to zero vector  
       register_output_selection_i(I) <= register_output_i(I) when out_sel(I) = '1' else
                                         zero_vector_i when out_sel(I) = '0';
    end generate GEN_REG;
    
    
-   --generate the logic for the register outputs
-   register_or_i(C_NR_REGS-2) <=  register_output_selection_i(C_NR_REGS-2) or register_output_selection_i(C_NR_REGS-1);
+   -- Generate the logic for the OR gates
+   -- The last basic register doesn't need an OR gate 
+   -- and the penultimate basic register takes the OR of the two last outputs
+      register_or_i(C_NR_REGS-2) <=  register_output_selection_i(C_NR_REGS-2) or register_output_selection_i(C_NR_REGS-1);
    GEN_OUT:
+   -- Generate the other OR gates
    for I in (C_NR_REGS-3) downto 0 generate
       register_or_i(I) <= register_output_selection_i(I) or register_or_i(I+1);
    end generate GEN_OUT;
-            
+
+-- If the OR logic is correct the selected ouput should be in the first index of register_or_i            
 data_out <= register_or_i(0);
   
 end Behavioral;

@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Nov 11 21:44:59 2020
+# Process ID: 17496
+# Current directory: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14088 C:\Users\robbe\Documents\School\2020-2021\DigitaalOntwerp\Labo\DigitaalOntwerp1\Labo4\Labo4.xpr
+# Log file: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/vivado.log
+# Journal file: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+import_files -norecurse C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/LDD/LDD1/L4_DataPath/sources/register_file.vhd
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -norecurse C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/LDD/LDD1/L4_DataPath/sources/data_path_tb.vhd
+update_compile_order -fileset sim_1
+set_property top data_path_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+source data_path_tb.tcl
+close_sim
+launch_simulation
+source data_path_tb.tcl
+close_sim
+launch_simulation
+source data_path_tb.tcl
+close_sim
+launch_simulation
+source data_path_tb.tcl
+close_sim
+launch_simulation
+source data_path_tb.tcl
+close_sim

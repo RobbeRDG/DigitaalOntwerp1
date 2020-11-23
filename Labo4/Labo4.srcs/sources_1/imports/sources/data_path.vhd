@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Institution: KU Leuven
--- Students: firstname lastname and other guy/girl/...
+-- Students: Martijn Vanderschelden and Robbe De Groeve
 -- 
 -- Module Name: data_path - Behavioral
 -- Course Name: Lab Digital Design
