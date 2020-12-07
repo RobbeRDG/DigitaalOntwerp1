@@ -31,8 +31,8 @@
 #define BCD3	FB	; Segment 3
 
 ; Define other symbols:
-#define COUNT	R0	;
-#define PREV	R1	;
+#define COUNT	R0	;current count
+#define PREV	R1	;previous button state
 
 ; program start
 reset:	; needs to be the first label
@@ -41,7 +41,8 @@ reset:	; needs to be the first label
 
 ; do some initial (one-time-only) setup
 setup:
-	movl COUNT, 00	;reset the count
+	movl COUNT, 00	set the count
+	movl PREV, 00	;set the previous button state
 	jmp loop
 	
 loop:	; continuously loop through instructions
