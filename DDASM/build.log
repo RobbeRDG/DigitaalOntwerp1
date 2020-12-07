@@ -11,14 +11,14 @@ Analysing program...
 	+-----------------+---------------+
 	| reset           | 00            |
 	| setup           | 02            |
-	| loop            | 06            |
-	| check_buttons   | 0c            |
-	| max_count_check | 24            |
-	| count_up        | 2a            |
-	| reset_count     | 2e            |
-	| min_count_check | 32            |
-	| count_down      | 38            |
-	| update_led      | 3c            |
+	| loop            | 08            |
+	| check_buttons   | 0e            |
+	| max_count_check | 26            |
+	| count_up        | 2c            |
+	| reset_count     | 30            |
+	| min_count_check | 34            |
+	| count_down      | 3a            |
+	| update_led      | 3e            |
 	+-----------------+---------------+
 
 - Symbols defined in up_down_counter.dda:
@@ -44,7 +44,7 @@ Analysing program...
 	| prev    | r1    |
 	+---------+-------+
 
- - Program size: 64 bytes.
+ - Program size: 66 bytes.
 
 Analysis complete.
 
@@ -61,125 +61,129 @@ Generating ROM memory file...
 		  2 => "01000000", -- movl count, 00
 		  3 => "00000000",
 
-{'address': 4, 'instruction': 'jmp', 'operand_1': 'loop', 'operand_2': None, 'comment': ' -- jmp loop\n'}
-		  4 => "00100000", -- jmp loop
-		  5 => "00000110",
+{'address': 4, 'instruction': 'movl', 'operand_1': 'prev', 'operand_2': '00', 'comment': ' -- movl prev, 00\n'}
+		  4 => "01000001", -- movl prev, 00
+		  5 => "00000000",
 
-{'address': 6, 'instruction': 'call', 'operand_1': 'update_led', 'operand_2': None, 'comment': ' -- call update_led\n'}
-		  6 => "00011000", -- call update_led
-		  7 => "00111100",
+{'address': 6, 'instruction': 'jmp', 'operand_1': 'loop', 'operand_2': None, 'comment': ' -- jmp loop\n'}
+		  6 => "00100000", -- jmp loop
+		  7 => "00001000",
 
-{'address': 8, 'instruction': 'call', 'operand_1': 'check_buttons', 'operand_2': None, 'comment': ' -- call check_buttons\n'}
-		  8 => "00011000", -- call check_buttons
-		  9 => "00001100",
+{'address': 8, 'instruction': 'call', 'operand_1': 'update_led', 'operand_2': None, 'comment': ' -- call update_led\n'}
+		  8 => "00011000", -- call update_led
+		  9 => "00111110",
 
-{'address': 10, 'instruction': 'jmp', 'operand_1': 'loop', 'operand_2': None, 'comment': ' -- jmp loop\n'}
-		 10 => "00100000", -- jmp loop
-		 11 => "00000110",
+{'address': 10, 'instruction': 'call', 'operand_1': 'check_buttons', 'operand_2': None, 'comment': ' -- call check_buttons\n'}
+		 10 => "00011000", -- call check_buttons
+		 11 => "00001110",
 
-{'address': 12, 'instruction': 'ldr', 'operand_1': 'r2', 'operand_2': 'e8', 'comment': ' -- ldr  r2, e8\n'}
-		 12 => "01010010", -- ldr  r2, e8
-		 13 => "11101000",
+{'address': 12, 'instruction': 'jmp', 'operand_1': 'loop', 'operand_2': None, 'comment': ' -- jmp loop\n'}
+		 12 => "00100000", -- jmp loop
+		 13 => "00001000",
 
-{'address': 14, 'instruction': 'movr', 'operand_1': 'r3', 'operand_2': 'r2', 'comment': ' -- movr r3, r2\n'}
-		 14 => "01001011", -- movr r3, r2
-		 15 => "01000000",
+{'address': 14, 'instruction': 'ldr', 'operand_1': 'r2', 'operand_2': 'e8', 'comment': ' -- ldr  r2, e8\n'}
+		 14 => "01010010", -- ldr  r2, e8
+		 15 => "11101000",
 
-{'address': 16, 'instruction': 'xorr', 'operand_1': 'r3', 'operand_2': 'prev', 'comment': ' -- xorr r3, prev\n'}
-		 16 => "11001011", -- xorr r3, prev
-		 17 => "00100000",
+{'address': 16, 'instruction': 'movr', 'operand_1': 'r3', 'operand_2': 'r2', 'comment': ' -- movr r3, r2\n'}
+		 16 => "01001011", -- movr r3, r2
+		 17 => "01000000",
 
-{'address': 18, 'instruction': 'andr', 'operand_1': 'r3', 'operand_2': 'r2', 'comment': ' -- andr r3, r2\n'}
-		 18 => "10101011", -- andr r3, r2
-		 19 => "01000000",
+{'address': 18, 'instruction': 'xorr', 'operand_1': 'r3', 'operand_2': 'prev', 'comment': ' -- xorr r3, prev\n'}
+		 18 => "11001011", -- xorr r3, prev
+		 19 => "00100000",
 
-{'address': 20, 'instruction': 'movr', 'operand_1': 'prev', 'operand_2': 'r2', 'comment': ' -- movr prev, r2\n'}
-		 20 => "01001001", -- movr prev, r2
+{'address': 20, 'instruction': 'andr', 'operand_1': 'r3', 'operand_2': 'r2', 'comment': ' -- andr r3, r2\n'}
+		 20 => "10101011", -- andr r3, r2
 		 21 => "01000000",
 
-{'address': 22, 'instruction': 'cmpl', 'operand_1': 'r3', 'operand_2': '01', 'comment': ' -- cmpl r3, 01\n'}
-		 22 => "11110011", -- cmpl r3, 01
-		 23 => "00000001",
+{'address': 22, 'instruction': 'movr', 'operand_1': 'prev', 'operand_2': 'r2', 'comment': ' -- movr prev, r2\n'}
+		 22 => "01001001", -- movr prev, r2
+		 23 => "01000000",
 
-{'address': 24, 'instruction': 'je', 'operand_1': 'min_count_check', 'operand_2': None, 'comment': ' -- je min_count_check\n'}
-		 24 => "00101010", -- je min_count_check
-		 25 => "00110010",
+{'address': 24, 'instruction': 'cmpl', 'operand_1': 'r3', 'operand_2': '01', 'comment': ' -- cmpl r3, 01\n'}
+		 24 => "11110011", -- cmpl r3, 01
+		 25 => "00000001",
 
-{'address': 26, 'instruction': 'cmpl', 'operand_1': 'r3', 'operand_2': '02', 'comment': ' -- cmpl r3, 02\n'}
-		 26 => "11110011", -- cmpl r3, 02
-		 27 => "00000010",
+{'address': 26, 'instruction': 'je', 'operand_1': 'min_count_check', 'operand_2': None, 'comment': ' -- je min_count_check\n'}
+		 26 => "00101010", -- je min_count_check
+		 27 => "00110100",
 
-{'address': 28, 'instruction': 'je', 'operand_1': 'reset_count', 'operand_2': None, 'comment': ' -- je reset_count\n'}
-		 28 => "00101010", -- je reset_count
-		 29 => "00101110",
+{'address': 28, 'instruction': 'cmpl', 'operand_1': 'r3', 'operand_2': '02', 'comment': ' -- cmpl r3, 02\n'}
+		 28 => "11110011", -- cmpl r3, 02
+		 29 => "00000010",
 
-{'address': 30, 'instruction': 'cmpl', 'operand_1': 'r3', 'operand_2': '04', 'comment': ' -- cmpl r3, 04\n'}
-		 30 => "11110011", -- cmpl r3, 04
-		 31 => "00000100",
+{'address': 30, 'instruction': 'je', 'operand_1': 'reset_count', 'operand_2': None, 'comment': ' -- je reset_count\n'}
+		 30 => "00101010", -- je reset_count
+		 31 => "00110000",
 
-{'address': 32, 'instruction': 'je', 'operand_1': 'max_count_check', 'operand_2': None, 'comment': ' -- je max_count_check\n'}
-		 32 => "00101010", -- je max_count_check
-		 33 => "00100100",
+{'address': 32, 'instruction': 'cmpl', 'operand_1': 'r3', 'operand_2': '04', 'comment': ' -- cmpl r3, 04\n'}
+		 32 => "11110011", -- cmpl r3, 04
+		 33 => "00000100",
 
-{'address': 34, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
-		 34 => "00010000", -- retc
-		 35 => "00000000",
+{'address': 34, 'instruction': 'je', 'operand_1': 'max_count_check', 'operand_2': None, 'comment': ' -- je max_count_check\n'}
+		 34 => "00101010", -- je max_count_check
+		 35 => "00100110",
 
-{'address': 36, 'instruction': 'cmpl', 'operand_1': 'count', 'operand_2': 'fe', 'comment': ' -- cmpl count, fe\n'}
-		 36 => "11110000", -- cmpl count, fe
-		 37 => "11111110",
+{'address': 36, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
+		 36 => "00010000", -- retc
+		 37 => "00000000",
 
-{'address': 38, 'instruction': 'js', 'operand_1': 'count_up', 'operand_2': None, 'comment': ' -- js count_up\n'}
-		 38 => "00101100", -- js count_up
-		 39 => "00101010",
+{'address': 38, 'instruction': 'cmpl', 'operand_1': 'count', 'operand_2': 'fe', 'comment': ' -- cmpl count, fe\n'}
+		 38 => "11110000", -- cmpl count, fe
+		 39 => "11111110",
 
-{'address': 40, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
-		 40 => "00010000", -- retc
-		 41 => "00000000",
+{'address': 40, 'instruction': 'js', 'operand_1': 'count_up', 'operand_2': None, 'comment': ' -- js count_up\n'}
+		 40 => "00101100", -- js count_up
+		 41 => "00101100",
 
-{'address': 42, 'instruction': 'addl', 'operand_1': 'count', 'operand_2': '01', 'comment': ' -- addl count, 01\n'}
-		 42 => "11010000", -- addl count, 01
-		 43 => "00000001",
+{'address': 42, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
+		 42 => "00010000", -- retc
+		 43 => "00000000",
 
-{'address': 44, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
-		 44 => "00010000", -- retc
-		 45 => "00000000",
+{'address': 44, 'instruction': 'addl', 'operand_1': 'count', 'operand_2': '01', 'comment': ' -- addl count, 01\n'}
+		 44 => "11010000", -- addl count, 01
+		 45 => "00000001",
 
-{'address': 46, 'instruction': 'movl', 'operand_1': 'count', 'operand_2': '00', 'comment': ' -- clr count\n'}
-		 46 => "01000000", -- clr count
+{'address': 46, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
+		 46 => "00010000", -- retc
 		 47 => "00000000",
 
-{'address': 48, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
-		 48 => "00010000", -- retc
+{'address': 48, 'instruction': 'movl', 'operand_1': 'count', 'operand_2': '00', 'comment': ' -- clr count\n'}
+		 48 => "01000000", -- clr count
 		 49 => "00000000",
 
-{'address': 50, 'instruction': 'cmpl', 'operand_1': 'count', 'operand_2': '00', 'comment': ' -- cmpl count, 00\n'}
-		 50 => "11110000", -- cmpl count, 00
+{'address': 50, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
+		 50 => "00010000", -- retc
 		 51 => "00000000",
 
-{'address': 52, 'instruction': 'jg', 'operand_1': 'count_down', 'operand_2': None, 'comment': ' -- jg count_down\n'}
-		 52 => "00101011", -- jg count_down
-		 53 => "00111000",
+{'address': 52, 'instruction': 'cmpl', 'operand_1': 'count', 'operand_2': '00', 'comment': ' -- cmpl count, 00\n'}
+		 52 => "11110000", -- cmpl count, 00
+		 53 => "00000000",
 
-{'address': 54, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
-		 54 => "00010000", -- retc
-		 55 => "00000000",
+{'address': 54, 'instruction': 'jg', 'operand_1': 'count_down', 'operand_2': None, 'comment': ' -- jg count_down\n'}
+		 54 => "00101011", -- jg count_down
+		 55 => "00111010",
 
-{'address': 56, 'instruction': 'subl', 'operand_1': 'count', 'operand_2': '01', 'comment': ' -- subl count, 01\n'}
-		 56 => "11100000", -- subl count, 01
-		 57 => "00000001",
+{'address': 56, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
+		 56 => "00010000", -- retc
+		 57 => "00000000",
 
-{'address': 58, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
-		 58 => "00010000", -- retc
-		 59 => "00000000",
+{'address': 58, 'instruction': 'subl', 'operand_1': 'count', 'operand_2': '01', 'comment': ' -- subl count, 01\n'}
+		 58 => "11100000", -- subl count, 01
+		 59 => "00000001",
 
-{'address': 60, 'instruction': 'str', 'operand_1': 'f0', 'operand_2': 'count', 'comment': ' -- str f0, count\n'}
-		 60 => "01011000", -- str f0, count
-		 61 => "11110000",
+{'address': 60, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
+		 60 => "00010000", -- retc
+		 61 => "00000000",
 
-{'address': 62, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
-		 62 => "00010000", -- retc
-		 63 => "00000000",
+{'address': 62, 'instruction': 'str', 'operand_1': 'f0', 'operand_2': 'count', 'comment': ' -- str f0, count\n'}
+		 62 => "01011000", -- str f0, count
+		 63 => "11110000",
+
+{'address': 64, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
+		 64 => "00010000", -- retc
+		 65 => "00000000",
 
 Program ROM complete.
 SUCCESS

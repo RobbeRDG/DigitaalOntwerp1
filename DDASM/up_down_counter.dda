@@ -41,8 +41,8 @@ reset:	; needs to be the first label
 
 ; do some initial (one-time-only) setup
 setup:
-	movl COUNT, 00	set the count
-	movl PREV, 00	;set the previous button state
+	movl COUNT, 00		;set the count
+	movl PREV, 00		;set the previous button state
 	jmp loop
 	
 loop:	; continuously loop through instructions
