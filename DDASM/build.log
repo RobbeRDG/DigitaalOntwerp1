@@ -1,0 +1,185 @@
+DDASM v0.1
+ - input:    up_down_counter.dda
+ - output:   ROM.vhd
+ - template: ROM_template.vhd
+
+Analysing program...
+- Labels defined in up_down_counter.dda:
+
+	+-----------------+---------------+
+	| label           | address (hex) |
+	+-----------------+---------------+
+	| reset           | 00            |
+	| setup           | 02            |
+	| loop            | 06            |
+	| check_buttons   | 0c            |
+	| max_count_check | 24            |
+	| count_up        | 2a            |
+	| reset_count     | 2e            |
+	| min_count_check | 32            |
+	| count_down      | 38            |
+	| update_led      | 3c            |
+	+-----------------+---------------+
+
+- Symbols defined in up_down_counter.dda:
+
+	+---------+-------+
+	| symbols | value |
+	+---------+-------+
+	| irqe    | c0    |
+	| irqf    | c1    |
+	| tmr1s   | d8    |
+	| t1s_on  | 01    |
+	| t1s_off | 00    |
+	| sw_l    | e0    |
+	| sw_h    | e1    |
+	| btns    | e8    |
+	| leds_l  | f0    |
+	| leds_h  | f1    |
+	| bcd0    | f8    |
+	| bcd1    | f9    |
+	| bcd2    | fa    |
+	| bcd3    | fb    |
+	| count   | r0    |
+	| prev    | r1    |
+	+---------+-------+
+
+ - Program size: 64 bytes.
+
+Analysis complete.
+
+
+Loading ROM template...
+ROM template loaded.
+
+Generating ROM memory file...
+{'address': 0, 'instruction': 'jmp', 'operand_1': 'setup', 'operand_2': None, 'comment': ' -- jmp setup\n'}
+		  0 => "00100000", -- jmp setup
+		  1 => "00000010",
+
+{'address': 2, 'instruction': 'movl', 'operand_1': 'count', 'operand_2': '00', 'comment': ' -- movl count, 00\n'}
+		  2 => "01000000", -- movl count, 00
+		  3 => "00000000",
+
+{'address': 4, 'instruction': 'jmp', 'operand_1': 'loop', 'operand_2': None, 'comment': ' -- jmp loop\n'}
+		  4 => "00100000", -- jmp loop
+		  5 => "00000110",
+
+{'address': 6, 'instruction': 'call', 'operand_1': 'update_led', 'operand_2': None, 'comment': ' -- call update_led\n'}
+		  6 => "00011000", -- call update_led
+		  7 => "00111100",
+
+{'address': 8, 'instruction': 'call', 'operand_1': 'check_buttons', 'operand_2': None, 'comment': ' -- call check_buttons\n'}
+		  8 => "00011000", -- call check_buttons
+		  9 => "00001100",
+
+{'address': 10, 'instruction': 'jmp', 'operand_1': 'loop', 'operand_2': None, 'comment': ' -- jmp loop\n'}
+		 10 => "00100000", -- jmp loop
+		 11 => "00000110",
+
+{'address': 12, 'instruction': 'ldr', 'operand_1': 'r2', 'operand_2': 'e8', 'comment': ' -- ldr  r2, e8\n'}
+		 12 => "01010010", -- ldr  r2, e8
+		 13 => "11101000",
+
+{'address': 14, 'instruction': 'movr', 'operand_1': 'r3', 'operand_2': 'r2', 'comment': ' -- movr r3, r2\n'}
+		 14 => "01001011", -- movr r3, r2
+		 15 => "01000000",
+
+{'address': 16, 'instruction': 'xorr', 'operand_1': 'r3', 'operand_2': 'prev', 'comment': ' -- xorr r3, prev\n'}
+		 16 => "11001011", -- xorr r3, prev
+		 17 => "00100000",
+
+{'address': 18, 'instruction': 'andr', 'operand_1': 'r3', 'operand_2': 'r2', 'comment': ' -- andr r3, r2\n'}
+		 18 => "10101011", -- andr r3, r2
+		 19 => "01000000",
+
+{'address': 20, 'instruction': 'movr', 'operand_1': 'prev', 'operand_2': 'r2', 'comment': ' -- movr prev, r2\n'}
+		 20 => "01001001", -- movr prev, r2
+		 21 => "01000000",
+
+{'address': 22, 'instruction': 'cmpl', 'operand_1': 'r3', 'operand_2': '01', 'comment': ' -- cmpl r3, 01\n'}
+		 22 => "11110011", -- cmpl r3, 01
+		 23 => "00000001",
+
+{'address': 24, 'instruction': 'je', 'operand_1': 'min_count_check', 'operand_2': None, 'comment': ' -- je min_count_check\n'}
+		 24 => "00101010", -- je min_count_check
+		 25 => "00110010",
+
+{'address': 26, 'instruction': 'cmpl', 'operand_1': 'r3', 'operand_2': '02', 'comment': ' -- cmpl r3, 02\n'}
+		 26 => "11110011", -- cmpl r3, 02
+		 27 => "00000010",
+
+{'address': 28, 'instruction': 'je', 'operand_1': 'reset_count', 'operand_2': None, 'comment': ' -- je reset_count\n'}
+		 28 => "00101010", -- je reset_count
+		 29 => "00101110",
+
+{'address': 30, 'instruction': 'cmpl', 'operand_1': 'r3', 'operand_2': '04', 'comment': ' -- cmpl r3, 04\n'}
+		 30 => "11110011", -- cmpl r3, 04
+		 31 => "00000100",
+
+{'address': 32, 'instruction': 'je', 'operand_1': 'max_count_check', 'operand_2': None, 'comment': ' -- je max_count_check\n'}
+		 32 => "00101010", -- je max_count_check
+		 33 => "00100100",
+
+{'address': 34, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
+		 34 => "00010000", -- retc
+		 35 => "00000000",
+
+{'address': 36, 'instruction': 'cmpl', 'operand_1': 'count', 'operand_2': 'fe', 'comment': ' -- cmpl count, fe\n'}
+		 36 => "11110000", -- cmpl count, fe
+		 37 => "11111110",
+
+{'address': 38, 'instruction': 'js', 'operand_1': 'count_up', 'operand_2': None, 'comment': ' -- js count_up\n'}
+		 38 => "00101100", -- js count_up
+		 39 => "00101010",
+
+{'address': 40, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
+		 40 => "00010000", -- retc
+		 41 => "00000000",
+
+{'address': 42, 'instruction': 'addl', 'operand_1': 'count', 'operand_2': '01', 'comment': ' -- addl count, 01\n'}
+		 42 => "11010000", -- addl count, 01
+		 43 => "00000001",
+
+{'address': 44, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
+		 44 => "00010000", -- retc
+		 45 => "00000000",
+
+{'address': 46, 'instruction': 'movl', 'operand_1': 'count', 'operand_2': '00', 'comment': ' -- clr count\n'}
+		 46 => "01000000", -- clr count
+		 47 => "00000000",
+
+{'address': 48, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
+		 48 => "00010000", -- retc
+		 49 => "00000000",
+
+{'address': 50, 'instruction': 'cmpl', 'operand_1': 'count', 'operand_2': '00', 'comment': ' -- cmpl count, 00\n'}
+		 50 => "11110000", -- cmpl count, 00
+		 51 => "00000000",
+
+{'address': 52, 'instruction': 'jg', 'operand_1': 'count_down', 'operand_2': None, 'comment': ' -- jg count_down\n'}
+		 52 => "00101011", -- jg count_down
+		 53 => "00111000",
+
+{'address': 54, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
+		 54 => "00010000", -- retc
+		 55 => "00000000",
+
+{'address': 56, 'instruction': 'subl', 'operand_1': 'count', 'operand_2': '01', 'comment': ' -- subl count, 01\n'}
+		 56 => "11100000", -- subl count, 01
+		 57 => "00000001",
+
+{'address': 58, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
+		 58 => "00010000", -- retc
+		 59 => "00000000",
+
+{'address': 60, 'instruction': 'str', 'operand_1': 'f0', 'operand_2': 'count', 'comment': ' -- str f0, count\n'}
+		 60 => "01011000", -- str f0, count
+		 61 => "11110000",
+
+{'address': 62, 'instruction': 'retc', 'operand_1': None, 'operand_2': None, 'comment': ' -- retc\n'}
+		 62 => "00010000", -- retc
+		 63 => "00000000",
+
+Program ROM complete.
+SUCCESS

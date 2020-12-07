@@ -1,0 +1,123 @@
+; Program for the LDDI Mark II processor
+; All numbers are hexadecimal
+
+; The assembler is not case-sensitive!
+
+; ADDRESS SPACE:
+;   ROM: 00 - 7F (128 bytes)
+;   RAM: 80 - 9F (32 bytes)
+;   I/O: A0 - FF (not all addresses are used currently!)
+;
+; Peripheral addresses:
+;   Interrupt control
+#define IRQE	C0	; interrupt enable
+#define IRQF	C1	; interrupt flags
+;   Timers
+#define TMR1S	D8	; 1 second timer control
+#define T1S_ON	01	; write T1S_ON to TMR1S to start the timer
+#define T1S_OFF 00	; write T1S_OFF to TMR1S to stop the timer
+;   Bi-stable switches
+#define SW_L	E0	; SW 0 - 7
+#define SW_H	E1	; SW 8 - 15
+;   Push buttons
+#define BTNS	E8	; push buttons
+;   LEDs
+#define LEDS_L	F0	; LED 0 - 7
+#define LEDS_H	F1	; LED 8 - 15
+;   7-segment display (lower 4 segments)
+#define BCD0	F8	; Segment 0
+#define BCD1	F9	; Segment 1
+#define BCD2	FA	; Segment 2
+#define BCD3	FB	; Segment 3
+
+; Define other symbols:
+#define I       R1    ; register R3 used for storing 'seconds' value
+
+
+; program start
+reset:	; needs to be the first label
+	jump setup
+	
+; optional interrupt service routine
+isr:	; needs to be the second label (if used)
+	reti	; return from interrupt
+
+; do some initial (one-time-only) setup
+setup:
+	movl S, 00 ; reset seconds
+	jmp loop
+	
+loop:	; continuously loop through instructions
+	call green_light
+	call orange_light
+	call red_light
+	jmp loop
+
+green_light:	
+	ldr  R0, F0	;place the led value in R0
+	movl R0, 01    	;light up the first led
+	str  F0, R0	;place the register R0 to the led value
+	call count_to_45
+	retc
+
+orange_light:
+	ldr  R0, F0	;place the led value in R0
+	movl R0, 02    	;light up the second led
+	str  F0, R0	;place the register R0 to the led value
+	call count_to_15
+	retc
+
+red_light:
+	ldr  R0, F0	;place the led value in R0
+	movl R0, 04    	;light up the third led
+	str  F0, R0	;place the register R0 to the led value
+	call count_to_45
+	retc
+
+count_to_45: 
+	inc I		;Increment the seconds value
+	cmpl I, 2D	;check if the timing is 45sec
+	js count_to_45 	;If the count is less then 45, repeat
+	movl I, 00 	;reset seconds
+	retc
+
+count_to_15: 
+	call count_loop_reset
+	inc I		;Increment the iterations value
+	cmpl S, 0F	;check if the number of iterations is 15
+	js count_to_15 	;If the count is less then 45, repeat
+	movl I, 00 	; reset seconds
+	retc
+
+count_loop_reset:
+	movl R2, 00	;set R2 to 0
+	movl R3, 00	;set R3 to 0
+	movl R4, 00	;set R4 to 0
+	retc
+
+count_loop_1:
+	inc R2	
+	cmpl R2, FF	;compare R2 to 255
+	js count_loop_2	;jump to count loop 2 if the value in R2 < 255
+	cmpl R2, FF	;compare R2 to 255 agian
+	js count_loop_1	;repeat count loop 1 if the value in R3 < 255
+	retc
+
+count_loop_2:	
+	inc R3		;increment the value in R3
+	cmpl R3, FF	;compare R3 to 255
+	js count_loop_3	;jump to count loop 3 if the value in R3 < 255
+	cmpl R3, FF	;compare R3 to 255 again
+	js count_loop_2	;repeat count loop 2 if the value in R3 < 255
+	retc
+
+count_loop_3:
+	inc R4		;increment the value in R4
+	cmpl R4, FF	;compare R4 to 255
+	js count_loop_3	;repeat loop if smaller
+	retc
+
+	
+	
+
+; end of program

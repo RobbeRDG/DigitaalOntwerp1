@@ -1,0 +1,95 @@
+; Program for the LDDI Mark II processor
+; All numbers are hexadecimal
+
+; The assembler is not case-sensitive!
+
+; ADDRESS SPACE:
+;   ROM: 00 - 7F (128 bytes)
+;   RAM: 80 - 9F (32 bytes)
+;   I/O: A0 - FF (not all addresses are used currently!)
+;
+; Peripheral addresses:
+;   Interrupt control
+#define IRQE	C0	; interrupt enable
+#define IRQF	C1	; interrupt flags
+;   Timers
+#define TMR1S	D8	; 1 second timer control
+#define T1S_ON	01	; write T1S_ON to TMR1S to start the timer
+#define T1S_OFF 00	; write T1S_OFF to TMR1S to stop the timer
+;   Bi-stable switches
+#define SW_L	E0	; SW 0 - 7
+#define SW_H	E1	; SW 8 - 15
+;   Push buttons
+#define BTNS	E8	; push buttons
+;   LEDs
+#define LEDS_L	F0	; LED 0 - 7
+#define LEDS_H	F1	; LED 8 - 15
+;   7-segment display (lower 4 segments)
+#define BCD0	F8	; Segment 0
+#define BCD1	F9	; Segment 1
+#define BCD2	FA	; Segment 2
+#define BCD3	FB	; Segment 3
+
+; Define other symbols:
+#define COUNT	R0	;
+#define PREV	R1	;
+
+; program start
+reset:	; needs to be the first label
+	jmp setup
+	
+
+; do some initial (one-time-only) setup
+setup:
+	movl COUNT, 00	;reset the count
+	jmp loop
+	
+loop:	; continuously loop through instructions
+	call update_led
+	call check_buttons
+	jmp loop
+
+; an example subroutine
+check_buttons:
+	ldr  R2, E8		;place the button state in R2
+	movr R3, R2		;move the value in R2 to R3
+	xorr R3, PREV		;compare the current value to the previous one using XOR to find state changes
+	andr R3, R2		;use AND to see if the changed button is active
+	movr PREV, R2		;place the current value in R2 for next iteration
+	cmpl R3, 01		;check if the first button is active
+	je min_count_check	;if the button is active,jump to underflow check
+	cmpl R3, 02		;check if the second button is active
+	je reset_count		;if the button is active, jump to reset count
+	cmpl R3, 04		;check if the third button is active
+	je max_count_check	;if the button is active, jump to overflow check
+	retc			;return from subroutine call
+
+max_count_check:
+	cmpl COUNT, FE 		;check if the count is smaller than 254
+	js count_up
+	retc
+
+count_up:
+	addl COUNT, 01
+	retc
+
+reset_count:
+	clr COUNT		;reset the count
+	retc
+
+min_count_check:
+	cmpl COUNT, 00		;check if the count is greater than 0
+	jg count_down
+	retc
+
+count_down:
+	subl COUNT, 01
+	retc
+
+
+update_led:
+	str F0, COUNT		;place the count to the led addres
+	retc
+
+
+; end of program
