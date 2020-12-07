@@ -1,0 +1,217 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Nov 23 15:22:36 2020
+# Process ID: 16584
+# Current directory: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.runs/synth_1
+# Command line: vivado.exe -log register_file.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source register_file.tcl
+# Log file: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.runs/synth_1/register_file.vds
+# Journal file: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source register_file.tcl -notrace
+Command: synth_design -top register_file -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 7040
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'register_file' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:43]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_NR_REGS bound to: 8 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REGX' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.srcs/sources_1/imports/sources/basic_register.vhd:40]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+WARNING: [Synth 8-614] signal 'le' is read in the process but is not in the sensitivity list [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.srcs/sources_1/imports/sources/basic_register.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'basic_register' (1#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.srcs/sources_1/imports/sources/basic_register.vhd:40]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REGX' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:84]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REGX' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:84]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REGX' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:84]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REGX' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:84]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REGX' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:84]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REGX' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:84]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/labo3/labo3.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REGX' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:84]
+INFO: [Synth 8-256] done synthesizing module 'register_file' (2#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:43]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+WARNING: [Synth 8-327] inferring latch for variable 'GEN_REG[7].register_output_selection_i_reg[7]' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:94]
+WARNING: [Synth 8-327] inferring latch for variable 'GEN_REG[6].register_output_selection_i_reg[6]' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:94]
+WARNING: [Synth 8-327] inferring latch for variable 'GEN_REG[5].register_output_selection_i_reg[5]' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:94]
+WARNING: [Synth 8-327] inferring latch for variable 'GEN_REG[4].register_output_selection_i_reg[4]' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:94]
+WARNING: [Synth 8-327] inferring latch for variable 'GEN_REG[3].register_output_selection_i_reg[3]' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:94]
+WARNING: [Synth 8-327] inferring latch for variable 'GEN_REG[2].register_output_selection_i_reg[2]' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:94]
+WARNING: [Synth 8-327] inferring latch for variable 'GEN_REG[1].register_output_selection_i_reg[1]' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:94]
+WARNING: [Synth 8-327] inferring latch for variable 'GEN_REG[0].register_output_selection_i_reg[0]' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.srcs/sources_1/imports/sources/register_file.vhd:94]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 8     
++---Muxes : 
+	   2 Input    8 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT2 |     8|
+|3     |LUT6 |    24|
+|4     |FDCE |    64|
+|5     |IBUF |    27|
+|6     |OBUF |     8|
++------+-----+------+
+
+Report Instance Areas: 
++------+--------------------+-----------------+------+
+|      |Instance            |Module           |Cells |
++------+--------------------+-----------------+------+
+|1     |top                 |                 |   132|
+|2     |  \GEN_REG[0].REGX  |basic_register   |     9|
+|3     |  \GEN_REG[1].REGX  |basic_register_0 |    17|
+|4     |  \GEN_REG[2].REGX  |basic_register_1 |     9|
+|5     |  \GEN_REG[3].REGX  |basic_register_2 |     9|
+|6     |  \GEN_REG[4].REGX  |basic_register_3 |    17|
+|7     |  \GEN_REG[5].REGX  |basic_register_4 |     9|
+|8     |  \GEN_REG[6].REGX  |basic_register_5 |     9|
+|9     |  \GEN_REG[7].REGX  |basic_register_6 |    17|
++------+--------------------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1031.066 ; gain = 0.000
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1031.066 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1031.066 ; gain = 0.000
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1031.066 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1031.066 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+22 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1031.066 ; gain = 17.043
+INFO: [Common 17-1381] The checkpoint 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.runs/synth_1/register_file.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file register_file_utilization_synth.rpt -pb register_file_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 23 15:22:55 2020...

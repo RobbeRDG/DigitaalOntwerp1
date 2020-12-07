@@ -139,15 +139,12 @@ architecture Behavioral of data_path is
     end component;
 
 begin
-    -- TODO: complete description
-    -- Outputs (map to internal signals)
+    -- Outputs mapped to signals
     cpu_bus <= cpu_bus_i;
     flags <= flags_i;
     
-    -- Inputs (map to internal signals <optional>)
     
-    
-    -- CPU bus control
+    -- CPU bus control multiplexer
     cpu_bus_i <= dibr when cpu_bus_sel = SFR_DBR else
                  z_i when cpu_bus_sel = SFR_Z else
                  pc when cpu_bus_sel = SFR_PC else
@@ -187,7 +184,7 @@ begin
     -- ALU flags register
     B_REGY : basic_register
     generic map (
-        C_DATA_WIDTH => C_NR_FLAGS
+        C_DATA_WIDTH => C_NR_FLAGS  --in-/output data is the flag vector
     )
     port map(
         clk => clk,
@@ -207,6 +204,8 @@ begin
          Y => y_i,
          Z => alu_out_i,
         op => alu_op,
+        
+        -- all flag indexes are defined in processor_pkg
         zf => alu_flags_i(C_ZF),
         cf => alu_flags_i(C_CF),
         ef => alu_flags_i(C_EF),
@@ -216,7 +215,7 @@ begin
     
     
     
-    -- register file register selection decoding
+    -- register file register selection decoding using processor_pkg definitions
     reg_file_in_sel_i <= "00000001" when Rdestination = REGFILE_R0 else
                          "00000010" when Rdestination = REGFILE_R1 else
                          "00000100" when Rdestination = REGFILE_R2 else

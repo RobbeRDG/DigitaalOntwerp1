@@ -1,0 +1,132 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Thu Nov 12 17:26:44 2020
+| Host         : DESKTOP-4T5KSEI running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    54 |
+|    Minimum number of control sets                        |    54 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    87 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    54 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     6 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |    19 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     2 |
+| >= 14 to < 16      |    21 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              65 |           29 |
+| No           | No                    | Yes                    |              48 |           12 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               8 |            2 |
+| Yes          | No                    | Yes                    |             243 |           85 |
+| Yes          | Yes                   | No                     |             301 |           87 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------------------+----------------+--------------+
+| Clock Signal |                                 Enable Signal                                 |                                   Set/Reset Signal                                  | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  clk_i       | PROCESSOR_INST/MAR/reg_reg[0]_0[0]                                            | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                3 |              4 |         1.33 |
+|  clk_i       | PROCESSOR_INST/MAR/reg_reg[0]_2[0]                                            | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                3 |              4 |         1.33 |
+|  clk_i       | PROCESSOR_INST/MAR/reg_reg[1]_0[0]                                            | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                1 |              4 |         4.00 |
+|  clk_i       | PROCESSOR_INST/MAR/reg_reg[3]_1[0]                                            | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                2 |              4 |         2.00 |
+|  clk_i       | PROCESSOR_INST/MAR/reg_reg[4]_3[0]                                            | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                3 |              4 |         1.33 |
+|  clk_i       | PROCESSOR_INST/SP_OFFSET/c_reg_reg[4]_i_1_n_0                                 | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                1 |              5 |         5.00 |
+|  clk_i       | PROCESSOR_INST/CU/read_en_rom_i                                               | PROCESSOR_INST/MAR/reg_reg[7]_1                                                     |                3 |              7 |         2.33 |
+|  clk_i       | PROCESSOR_INST/IR_MSB/le_i[1]                                                 | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                2 |              8 |         4.00 |
+|  clk_i       | PROCESSOR_INST/CU/ctrl_mem_addr_i_reg_rep[5]_1[3]                             | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                2 |              8 |         4.00 |
+|  clk_i       | PROCESSOR_INST/IR_MSB/le_i[3]                                                 | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                3 |              8 |         2.67 |
+|  clk_i       | PROCESSOR_INST/IR_MSB/le_i[2]                                                 | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                3 |              8 |         2.67 |
+|  clk_i       | PROCESSOR_INST/IR_MSB/le_i[6]                                                 | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                4 |              8 |         2.00 |
+|  clk_i       | PROCESSOR_INST/CU/IC/write_en_ram_i                                           |                                                                                     |                2 |              8 |         4.00 |
+|  clk_i       | PROCESSOR_INST/CU/IC/E[0]                                                     | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                3 |              8 |         2.67 |
+|  clk_i       | PROCESSOR_INST/CU/ctrl_mem_addr_i_reg_rep[5]_1[0]                             | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                4 |              8 |         2.00 |
+|  clk_i       | PROCESSOR_INST/CU/ctrl_mem_addr_i_reg_rep[5]_1[1]                             | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                2 |              8 |         4.00 |
+|  clk_i       | PROCESSOR_INST/CU/ctrl_mem_addr_i_reg_rep[5]_1[2]                             | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                3 |              8 |         2.67 |
+|  clk_i       | PROCESSOR_INST/CU/ctrl_mem_addr_i_reg_rep[5]_1[4]                             | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                2 |              8 |         4.00 |
+|  clk_i       | PROCESSOR_INST/CU/ctrl_mem_addr_i_reg_rep[5]_1[5]                             | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                2 |              8 |         4.00 |
+|  clk_i       | PROCESSOR_INST/MAR/E[0]                                                       |                                                                                     |                2 |              8 |         4.00 |
+|  clk_i       | PROCESSOR_INST/MAR/reg_reg[5]_0[0]                                            | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                2 |              8 |         4.00 |
+|  clk_i       | PROCESSOR_INST/MAR/reg_reg[5]_3[0]                                            | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                2 |              8 |         4.00 |
+|  clk_i       | PROCESSOR_INST/IR_MSB/le_i[4]                                                 | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                3 |              8 |         2.67 |
+|  clk_i       | PROCESSOR_INST/IR_MSB/le_i[0]                                                 | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                3 |              8 |         2.67 |
+|  clk_i       | PROCESSOR_INST/IR_MSB/le_i[5]                                                 | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                3 |              8 |         2.67 |
+|  clk_i       | PROCESSOR_INST/IR_MSB/le_i[7]                                                 | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                3 |              8 |         2.67 |
+|  clk_i       | PROCESSOR_INST/MAR/reg_reg[3]_0[0]                                            | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                3 |             12 |         4.00 |
+|  clk_i       | PROCESSOR_INST/CU/ctrl_mem_addr_i_reg_rep[2]_0[0]                             | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                4 |             13 |         3.25 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[9].DEBOUNCERS/counter   | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[9].DEBOUNCERS/reset_counter   |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[5].DEBOUNCERS/counter   | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[5].DEBOUNCERS/reset_counter   |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[6].DEBOUNCERS/counter   | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[6].DEBOUNCERS/reset_counter   |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[7].DEBOUNCERS/counter   | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[7].DEBOUNCERS/reset_counter   |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[8].DEBOUNCERS/counter   | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[8].DEBOUNCERS/reset_counter   |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[1].DEBOUNCERS/counter   | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[1].DEBOUNCERS/reset_counter   |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[2].DEBOUNCERS/counter   | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[2].DEBOUNCERS/reset_counter   |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[3].DEBOUNCERS/counter   | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[3].DEBOUNCERS/reset_counter   |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[4].DEBOUNCERS/counter   | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[4].DEBOUNCERS/reset_counter   |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[11].DEBOUNCERS/counter  | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[11].DEBOUNCERS/reset_counter  |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[13].DEBOUNCERS/counter  | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[13].DEBOUNCERS/reset_counter  |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[14].DEBOUNCERS/counter  | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[14].DEBOUNCERS/reset_counter  |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/BTNS_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[4].DEBOUNCERS/counter | IO_INST/BTNS_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[4].DEBOUNCERS/reset_counter |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[0].DEBOUNCERS/counter   | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[0].DEBOUNCERS/reset_counter   |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/BTNS_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[3].DEBOUNCERS/counter | IO_INST/BTNS_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[3].DEBOUNCERS/reset_counter |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/BTNS_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[2].DEBOUNCERS/counter | IO_INST/BTNS_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[2].DEBOUNCERS/reset_counter |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/BTNS_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[1].DEBOUNCERS/counter | IO_INST/BTNS_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[1].DEBOUNCERS/reset_counter |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[12].DEBOUNCERS/counter  | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[12].DEBOUNCERS/reset_counter  |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/BTNS_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[0].DEBOUNCERS/counter | IO_INST/BTNS_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[0].DEBOUNCERS/reset_counter |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[10].DEBOUNCERS/counter  | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[10].DEBOUNCERS/reset_counter  |                4 |             14 |         3.50 |
+|  clk_i       | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[15].DEBOUNCERS/counter  | IO_INST/SW_REGISTERS/BTNS_DEBOUNCING/DEBOUNCED_VECTOR[15].DEBOUNCERS/reset_counter  |                4 |             14 |         3.50 |
+|  clk_i       | PROCESSOR_INST/MAR/reg_reg[0]_3[0]                                            | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                8 |             16 |         2.00 |
+|  clk_i       | PROCESSOR_INST/MAR/reg_reg[0]_1[0]                                            | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                6 |             16 |         2.67 |
+|  clk_i       | IO_INST/TIMER_REG/PERIPHERAL/REG_FILE[0].REG_INST/Q[0]                        | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |                5 |             25 |         5.00 |
+|  clk_i       |                                                                               | PROCESSOR_INST/REG_FILE/REG_FILE[0].REG_INST/AR[0]                                  |               12 |             48 |         4.00 |
+|  clk_i       |                                                                               |                                                                                     |               29 |             65 |         2.24 |
++--------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------------------+----------------+--------------+
+
+

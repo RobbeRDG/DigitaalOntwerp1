@@ -12,3 +12,41 @@
 start_gui
 open_project C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo4/Labo4.xpr
 update_compile_order -fileset sources_1
+launch_simulation
+source data_path_tb.tcl
+close_sim
+launch_simulation
+source data_path_tb.tcl
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+synth_design -rtl -name rtl_1
+write_schematic -format pdf -orientation landscape C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/DDASM/schematic.pdf
+write_schematic -format pdf -orientation portrait C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/Verslagen/Labo4/Resources/schematic.pdf
+write_schematic -format pdf -orientation landscape -force C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/Verslagen/Labo4/Resources/schematic.pdf
+set_property top register_file_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+copy_run -name synth_1_copy_1 [get_runs synth_1] 
+set_property top register_file [current_fileset]
+update_compile_order -fileset sources_1
+copy_run -name impl_1_copy_1 [get_runs impl_1] -parent_run synth_1
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+current_design synth_1
+close_design
+open_run synth_1 -name synth_1
+write_schematic -format pdf -orientation portrait C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/Verslagen/Labo4/Resources/basic_register.pdf
+write_schematic -format pdf -orientation landscape C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/Verslagen/Labo4/Resources/schematic.pdf
+write_schematic -format pdf -orientation landscape C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/Verslagen/Labo4/Resources/schematic.pdf
+current_design rtl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+current_design synth_1
+close_design
+open_run synth_1 -name synth_1
+write_schematic -format pdf -orientation landscape C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/Verslagen/Labo4/Resources/schematic.pdf
+close_sim

@@ -1,0 +1,863 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Nov 12 17:25:21 2020
+# Process ID: 1108
+# Current directory: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.runs/synth_1/top.vds
+# Journal file: C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: synth_design -top top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 20112
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1013.555 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'top' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/top.vhd:43]
+	Parameter BUFR_DIVIDE bound to: 8 - type: string 
+	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
+INFO: [Synth 8-113] binding component instance 'CLOCK_DIV' to cell 'BUFR' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/top.vhd:174]
+	Parameter C_ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'Processor' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:37' bound to instance 'PROCESSOR_INST' of component 'Processor' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/top.vhd:208]
+INFO: [Synth 8-638] synthesizing module 'Processor' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:55]
+	Parameter C_ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_PC_WIDTH bound to: 8 - type: integer 
+	Parameter C_PC_STEP bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'Program_Counter' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Program_Counter.vhd:29' bound to instance 'PC' of component 'Program_Counter' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:239]
+INFO: [Synth 8-638] synthesizing module 'Program_Counter' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Program_Counter.vhd:44]
+	Parameter C_PC_WIDTH bound to: 8 - type: integer 
+	Parameter C_PC_STEP bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Program_Counter' (1#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Program_Counter.vhd:44]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'ControlUnit' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ControlUnit.vhd:28' bound to instance 'CU' of component 'ControlUnit' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:254]
+INFO: [Synth 8-638] synthesizing module 'ControlUnit' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ControlUnit.vhd:44]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'Interrupt_Control' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Interrupt_Control.vhd:26' bound to instance 'IC' of component 'Interrupt_Control' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ControlUnit.vhd:434]
+INFO: [Synth 8-638] synthesizing module 'Interrupt_Control' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Interrupt_Control.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'Interrupt_Control' (2#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Interrupt_Control.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'ControlUnit' (3#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ControlUnit.vhd:44]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'DIBR' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:302]
+INFO: [Synth 8-638] synthesizing module 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:40]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'basic_register' (4#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:40]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'DOBR' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:315]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'MAR' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:329]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'IR_MSB' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:344]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'IR_LSB' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:356]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'ALU_Y' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:369]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'ALU_Z' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:382]
+	Parameter C_DATA_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'ALU_FLAGS' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:395]
+INFO: [Synth 8-638] synthesizing module 'basic_register__parameterized2' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:40]
+	Parameter C_DATA_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'basic_register__parameterized2' (4#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:40]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'ALU8bit' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ALU8bit.vhd:29' bound to instance 'ALU' of component 'ALU8bit' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:408]
+INFO: [Synth 8-638] synthesizing module 'ALU8bit' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ALU8bit.vhd:48]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'ADD' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ADD.vhd:16' bound to instance 'ADDER' of component 'ADD' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ALU8bit.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'ADD' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ADD.vhd:29]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'FA1B' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/FA1B.vhd:16' bound to instance 'full_adder' of component 'FA1B' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ADD.vhd:48]
+INFO: [Synth 8-638] synthesizing module 'FA1B' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/FA1B.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'FA1B' (5#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/FA1B.vhd:25]
+INFO: [Synth 8-3491] module 'FA1B' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/FA1B.vhd:16' bound to instance 'full_adder' of component 'FA1B' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ADD.vhd:48]
+INFO: [Synth 8-3491] module 'FA1B' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/FA1B.vhd:16' bound to instance 'full_adder' of component 'FA1B' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ADD.vhd:48]
+INFO: [Synth 8-3491] module 'FA1B' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/FA1B.vhd:16' bound to instance 'full_adder' of component 'FA1B' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ADD.vhd:48]
+INFO: [Synth 8-3491] module 'FA1B' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/FA1B.vhd:16' bound to instance 'full_adder' of component 'FA1B' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ADD.vhd:48]
+INFO: [Synth 8-3491] module 'FA1B' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/FA1B.vhd:16' bound to instance 'full_adder' of component 'FA1B' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ADD.vhd:48]
+INFO: [Synth 8-3491] module 'FA1B' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/FA1B.vhd:16' bound to instance 'full_adder' of component 'FA1B' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ADD.vhd:48]
+INFO: [Synth 8-3491] module 'FA1B' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/FA1B.vhd:16' bound to instance 'full_adder' of component 'FA1B' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ADD.vhd:48]
+INFO: [Synth 8-256] done synthesizing module 'ADD' (6#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ADD.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'ALU8bit' (7#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/ALU8bit.vhd:48]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_NR_REGS bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'register_file' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/register_file.vhd:27' bound to instance 'REG_FILE' of component 'Register_File' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:450]
+INFO: [Synth 8-638] synthesizing module 'register_file' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/register_file.vhd:43]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_NR_REGS bound to: 8 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/register_file.vhd:70]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/register_file.vhd:70]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/register_file.vhd:70]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/register_file.vhd:70]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/register_file.vhd:70]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/register_file.vhd:70]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/register_file.vhd:70]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/register_file.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'register_file' (8#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/register_file.vhd:43]
+	Parameter C_NR_BITS bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'updown_counter' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/updown_counter.vhd:29' bound to instance 'SP_OFFSET' of component 'updown_counter' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:466]
+INFO: [Synth 8-638] synthesizing module 'updown_counter' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/updown_counter.vhd:44]
+	Parameter C_NR_BITS bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'updown_counter' (9#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/updown_counter.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'Processor' (10#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Processor.vhd:55]
+	Parameter C_ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'ROM' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/DDASM/ROM.vhd:26' bound to instance 'ROM_INST' of component 'ROM' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/top.vhd:228]
+INFO: [Synth 8-638] synthesizing module 'ROM' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/DDASM/ROM.vhd:39]
+	Parameter C_ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'ROM' (11#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/DDASM/ROM.vhd:39]
+	Parameter C_ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'RAM' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/RAM.vhd:25' bound to instance 'RAM_INST' of component 'RAM' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/top.vhd:242]
+INFO: [Synth 8-638] synthesizing module 'RAM' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/RAM.vhd:40]
+	Parameter C_ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter INIT bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter IS_WCLK_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'RAM64X1S_inst' to cell 'RAM64X1S' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/RAM.vhd:52]
+	Parameter INIT bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter IS_WCLK_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'RAM64X1S_inst' to cell 'RAM64X1S' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/RAM.vhd:52]
+	Parameter INIT bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter IS_WCLK_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'RAM64X1S_inst' to cell 'RAM64X1S' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/RAM.vhd:52]
+	Parameter INIT bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter IS_WCLK_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'RAM64X1S_inst' to cell 'RAM64X1S' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/RAM.vhd:52]
+	Parameter INIT bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter IS_WCLK_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'RAM64X1S_inst' to cell 'RAM64X1S' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/RAM.vhd:52]
+	Parameter INIT bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter IS_WCLK_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'RAM64X1S_inst' to cell 'RAM64X1S' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/RAM.vhd:52]
+	Parameter INIT bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter IS_WCLK_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'RAM64X1S_inst' to cell 'RAM64X1S' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/RAM.vhd:52]
+	Parameter INIT bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter IS_WCLK_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'RAM64X1S_inst' to cell 'RAM64X1S' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/RAM.vhd:52]
+INFO: [Synth 8-256] done synthesizing module 'RAM' (12#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/RAM.vhd:40]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+	Parameter C_ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_NR_BTNS bound to: 5 - type: integer 
+	Parameter C_NR_SW bound to: 16 - type: integer 
+	Parameter C_NR_LEDS bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'IO' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/IO.vhd:29' bound to instance 'IO_INST' of component 'IO' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/top.vhd:257]
+INFO: [Synth 8-638] synthesizing module 'IO' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/IO.vhd:60]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+	Parameter C_ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_NR_BTNS bound to: 5 - type: integer 
+	Parameter C_NR_SW bound to: 16 - type: integer 
+	Parameter C_NR_LEDS bound to: 16 - type: integer 
+	Parameter C_ADDR_BASE bound to: 6'b110000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 8 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 2 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'generic_peripheral' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:29' bound to instance 'LED_REGISTERS' of component 'generic_peripheral' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/IO.vhd:311]
+INFO: [Synth 8-638] synthesizing module 'generic_peripheral' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:60]
+	Parameter C_ADDR_BASE bound to: 6'b110000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 8 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 2 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+	Parameter C_ADDR_BASE bound to: 6'b110000 
+	Parameter C_ADDR_PERI_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'peripheral_address_decoder' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:28' bound to instance 'DECODER' of component 'peripheral_address_decoder' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'peripheral_address_decoder' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:42]
+	Parameter C_ADDR_BASE bound to: 6'b110000 
+	Parameter C_ADDR_PERI_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'peripheral_address_decoder' (13#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:42]
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 8 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 2 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'peripheral_registers' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:29' bound to instance 'PERIPHERAL' of component 'peripheral_registers' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:124]
+INFO: [Synth 8-638] synthesizing module 'peripheral_registers' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:53]
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 8 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 2 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:90]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'peripheral_registers' (14#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'generic_peripheral' (15#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:60]
+	Parameter C_ADDR_BASE bound to: 6'b111000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 4 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 4 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'generic_peripheral' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:29' bound to instance 'SEG7_REGISTERS' of component 'generic_peripheral' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/IO.vhd:344]
+INFO: [Synth 8-638] synthesizing module 'generic_peripheral__parameterized1' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:60]
+	Parameter C_ADDR_BASE bound to: 6'b111000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 4 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 4 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+	Parameter C_ADDR_BASE bound to: 6'b111000 
+	Parameter C_ADDR_PERI_WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'peripheral_address_decoder' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:28' bound to instance 'DECODER' of component 'peripheral_address_decoder' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'peripheral_address_decoder__parameterized1' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:42]
+	Parameter C_ADDR_BASE bound to: 6'b111000 
+	Parameter C_ADDR_PERI_WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'peripheral_address_decoder__parameterized1' (15#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:42]
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 4 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 4 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'peripheral_registers' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:29' bound to instance 'PERIPHERAL' of component 'peripheral_registers' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:124]
+INFO: [Synth 8-638] synthesizing module 'peripheral_registers__parameterized1' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:53]
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 4 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 4 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:90]
+INFO: [Synth 8-638] synthesizing module 'basic_register__parameterized4' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:40]
+	Parameter C_DATA_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'basic_register__parameterized4' (15#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:40]
+	Parameter C_DATA_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:90]
+	Parameter C_DATA_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:90]
+	Parameter C_DATA_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'peripheral_registers__parameterized1' (15#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'generic_peripheral__parameterized1' (15#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:60]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+INFO: [Synth 8-3491] module 'Driver_7seg_4' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Driver_7seg_4.vhd:27' bound to instance 'DISP_SEG_DRIVER' of component 'Driver_7seg_4' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/IO.vhd:377]
+INFO: [Synth 8-638] synthesizing module 'Driver_7seg_4' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Driver_7seg_4.vhd:43]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Driver_7seg_4.vhd:84]
+INFO: [Synth 8-226] default block is never used [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Driver_7seg_4.vhd:91]
+	Parameter INIT bound to: 16'b1101011111101101 
+INFO: [Synth 8-113] binding component instance 'SEG_A' to cell 'LUT4' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Driver_7seg_4.vhd:99]
+	Parameter INIT bound to: 16'b0010011110011111 
+INFO: [Synth 8-113] binding component instance 'SEG_B' to cell 'LUT4' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Driver_7seg_4.vhd:110]
+	Parameter INIT bound to: 16'b0010111111111011 
+INFO: [Synth 8-113] binding component instance 'SEG_C' to cell 'LUT4' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Driver_7seg_4.vhd:121]
+	Parameter INIT bound to: 16'b0111101101101101 
+INFO: [Synth 8-113] binding component instance 'SEG_D' to cell 'LUT4' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Driver_7seg_4.vhd:132]
+	Parameter INIT bound to: 16'b1111110101000101 
+INFO: [Synth 8-113] binding component instance 'SEG_E' to cell 'LUT4' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Driver_7seg_4.vhd:143]
+	Parameter INIT bound to: 16'b1101111101110001 
+INFO: [Synth 8-113] binding component instance 'SEG_F' to cell 'LUT4' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Driver_7seg_4.vhd:154]
+	Parameter INIT bound to: 16'b1110111101111100 
+INFO: [Synth 8-113] binding component instance 'SEG_G' to cell 'LUT4' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Driver_7seg_4.vhd:165]
+INFO: [Synth 8-256] done synthesizing module 'Driver_7seg_4' (16#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Driver_7seg_4.vhd:43]
+	Parameter C_ADDR_BASE bound to: 6'b101000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 5 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounced_input_peripheral' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounced_input_peripheral.vhd:26' bound to instance 'BTNS_REGISTERS' of component 'debounced_input_peripheral' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/IO.vhd:394]
+INFO: [Synth 8-638] synthesizing module 'debounced_input_peripheral' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounced_input_peripheral.vhd:60]
+	Parameter C_ADDR_BASE bound to: 6'b101000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 5 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+	Parameter C_ADDR_BASE bound to: 6'b101000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 5 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'generic_peripheral' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:29' bound to instance 'REGISTERS' of component 'generic_peripheral' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounced_input_peripheral.vhd:128]
+INFO: [Synth 8-638] synthesizing module 'generic_peripheral__parameterized3' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:60]
+	Parameter C_ADDR_BASE bound to: 6'b101000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 5 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 1 - type: integer 
+WARNING: [Synth 8-6774] Null subtype or type declaration found [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:64]
+	Parameter C_ADDR_BASE bound to: 6'b101000 
+	Parameter C_ADDR_PERI_WIDTH bound to: 0 - type: integer 
+WARNING: [Synth 8-506] null port 'addr_peri' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:77]
+INFO: [Synth 8-3491] module 'peripheral_address_decoder' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:28' bound to instance 'DECODER' of component 'peripheral_address_decoder' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'peripheral_address_decoder__parameterized3' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:42]
+	Parameter C_ADDR_BASE bound to: 6'b101000 
+	Parameter C_ADDR_PERI_WIDTH bound to: 0 - type: integer 
+WARNING: [Synth 8-506] null port 'addr_peri' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'peripheral_address_decoder__parameterized3' (16#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:42]
+WARNING: [Synth 8-6778] Component port with null array found, Will be ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:118]
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 5 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 1 - type: integer 
+WARNING: [Synth 8-506] null port 'addr' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:101]
+INFO: [Synth 8-3491] module 'peripheral_registers' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:29' bound to instance 'PERIPHERAL' of component 'peripheral_registers' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:124]
+INFO: [Synth 8-638] synthesizing module 'peripheral_registers__parameterized3' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:53]
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 5 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 1 - type: integer 
+WARNING: [Synth 8-506] null port 'addr' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:47]
+	Parameter C_DATA_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'peripheral_registers__parameterized3' (16#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:53]
+WARNING: [Synth 8-6778] Component port with null array found, Will be ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:142]
+INFO: [Synth 8-256] done synthesizing module 'generic_peripheral__parameterized3' (16#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:60]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'debounce_vector' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:17' bound to instance 'BTNS_DEBOUNCING' of component 'debounce_vector' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounced_input_peripheral.vhd:158]
+INFO: [Synth 8-638] synthesizing module 'debounce_vector' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:30]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 5 - type: integer 
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+INFO: [Synth 8-638] synthesizing module 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:33]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'debounce' (17#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:33]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+INFO: [Synth 8-256] done synthesizing module 'debounce_vector' (18#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:30]
+	Parameter C_DATA_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'diff_detector' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/diff_detector.vhd:26' bound to instance 'IRQ_DETECT' of component 'diff_detector' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounced_input_peripheral.vhd:171]
+INFO: [Synth 8-638] synthesizing module 'diff_detector' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/diff_detector.vhd:40]
+	Parameter C_DATA_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'diff_detector' (19#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/diff_detector.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'debounced_input_peripheral' (20#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounced_input_peripheral.vhd:60]
+	Parameter C_ADDR_BASE bound to: 6'b100000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 8 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 2 - type: integer 
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounced_input_peripheral' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounced_input_peripheral.vhd:26' bound to instance 'SW_REGISTERS' of component 'debounced_input_peripheral' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/IO.vhd:430]
+INFO: [Synth 8-638] synthesizing module 'debounced_input_peripheral__parameterized1' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounced_input_peripheral.vhd:60]
+	Parameter C_ADDR_BASE bound to: 6'b100000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 8 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 2 - type: integer 
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+	Parameter C_ADDR_BASE bound to: 6'b100000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 8 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 2 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'generic_peripheral' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:29' bound to instance 'REGISTERS' of component 'generic_peripheral' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounced_input_peripheral.vhd:128]
+INFO: [Synth 8-638] synthesizing module 'generic_peripheral__parameterized5' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:60]
+	Parameter C_ADDR_BASE bound to: 6'b100000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 8 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 2 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 1 - type: integer 
+	Parameter C_ADDR_BASE bound to: 6'b100000 
+	Parameter C_ADDR_PERI_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'peripheral_address_decoder' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:28' bound to instance 'DECODER' of component 'peripheral_address_decoder' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'peripheral_address_decoder__parameterized5' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:42]
+	Parameter C_ADDR_BASE bound to: 6'b100000 
+	Parameter C_ADDR_PERI_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'peripheral_address_decoder__parameterized5' (20#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:42]
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 8 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 2 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'peripheral_registers' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:29' bound to instance 'PERIPHERAL' of component 'peripheral_registers' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:124]
+INFO: [Synth 8-638] synthesizing module 'peripheral_registers__parameterized5' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:53]
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 8 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 2 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 1 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:90]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'peripheral_registers__parameterized5' (20#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'generic_peripheral__parameterized5' (20#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:60]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'debounce_vector' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:17' bound to instance 'BTNS_DEBOUNCING' of component 'debounce_vector' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounced_input_peripheral.vhd:158]
+INFO: [Synth 8-638] synthesizing module 'debounce_vector__parameterized1' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:30]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+	Parameter C_DELAY_MS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce.vhd:21' bound to instance 'DEBOUNCERS' of component 'debounce' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:48]
+INFO: [Synth 8-256] done synthesizing module 'debounce_vector__parameterized1' (20#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounce_vector.vhd:30]
+	Parameter C_DATA_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'diff_detector' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/diff_detector.vhd:26' bound to instance 'IRQ_DETECT' of component 'diff_detector' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounced_input_peripheral.vhd:171]
+INFO: [Synth 8-638] synthesizing module 'diff_detector__parameterized1' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/diff_detector.vhd:40]
+	Parameter C_DATA_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'diff_detector__parameterized1' (20#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/diff_detector.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'debounced_input_peripheral__parameterized1' (20#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/debounced_input_peripheral.vhd:60]
+	Parameter C_ADDR_BASE bound to: 6'b011000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 8 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'generic_peripheral' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:29' bound to instance 'TIMER_REG' of component 'generic_peripheral' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/IO.vhd:466]
+INFO: [Synth 8-638] synthesizing module 'generic_peripheral__parameterized7' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:60]
+	Parameter C_ADDR_BASE bound to: 6'b011000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 8 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+WARNING: [Synth 8-6774] Null subtype or type declaration found [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:64]
+	Parameter C_ADDR_BASE bound to: 6'b011000 
+	Parameter C_ADDR_PERI_WIDTH bound to: 0 - type: integer 
+WARNING: [Synth 8-506] null port 'addr_peri' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:77]
+INFO: [Synth 8-3491] module 'peripheral_address_decoder' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:28' bound to instance 'DECODER' of component 'peripheral_address_decoder' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'peripheral_address_decoder__parameterized7' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:42]
+	Parameter C_ADDR_BASE bound to: 6'b011000 
+	Parameter C_ADDR_PERI_WIDTH bound to: 0 - type: integer 
+WARNING: [Synth 8-506] null port 'addr_peri' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'peripheral_address_decoder__parameterized7' (20#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:42]
+WARNING: [Synth 8-6778] Component port with null array found, Will be ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:118]
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 8 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+WARNING: [Synth 8-506] null port 'addr' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:101]
+INFO: [Synth 8-3491] module 'peripheral_registers' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:29' bound to instance 'PERIPHERAL' of component 'peripheral_registers' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:124]
+INFO: [Synth 8-638] synthesizing module 'peripheral_registers__parameterized7' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:53]
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 8 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+WARNING: [Synth 8-506] null port 'addr' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:47]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'peripheral_registers__parameterized7' (20#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:53]
+WARNING: [Synth 8-6778] Component port with null array found, Will be ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:142]
+INFO: [Synth 8-256] done synthesizing module 'generic_peripheral__parameterized7' (20#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:60]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+INFO: [Synth 8-3491] module 'Timer_1s' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Timer_1s.vhd:26' bound to instance 'TMR1S' of component 'Timer_1s' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/IO.vhd:497]
+INFO: [Synth 8-638] synthesizing module 'Timer_1s' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Timer_1s.vhd:38]
+	Parameter C_F_CLK bound to: 12500000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Timer_1s' (21#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/Timer_1s.vhd:38]
+	Parameter C_ADDR_BASE bound to: 6'b000000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 4 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'generic_peripheral' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:29' bound to instance 'IRQ_E_REGISTER' of component 'generic_peripheral' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/IO.vhd:510]
+INFO: [Synth 8-638] synthesizing module 'generic_peripheral__parameterized9' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:60]
+	Parameter C_ADDR_BASE bound to: 6'b000000 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 4 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+WARNING: [Synth 8-6774] Null subtype or type declaration found [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:64]
+	Parameter C_ADDR_BASE bound to: 6'b000000 
+	Parameter C_ADDR_PERI_WIDTH bound to: 0 - type: integer 
+WARNING: [Synth 8-506] null port 'addr_peri' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:77]
+INFO: [Synth 8-3491] module 'peripheral_address_decoder' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:28' bound to instance 'DECODER' of component 'peripheral_address_decoder' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'peripheral_address_decoder__parameterized9' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:42]
+	Parameter C_ADDR_BASE bound to: 6'b000000 
+	Parameter C_ADDR_PERI_WIDTH bound to: 0 - type: integer 
+WARNING: [Synth 8-506] null port 'addr_peri' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'peripheral_address_decoder__parameterized9' (21#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:42]
+WARNING: [Synth 8-6778] Component port with null array found, Will be ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:118]
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 4 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+WARNING: [Synth 8-506] null port 'addr' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:101]
+INFO: [Synth 8-3491] module 'peripheral_registers' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:29' bound to instance 'PERIPHERAL' of component 'peripheral_registers' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:124]
+INFO: [Synth 8-638] synthesizing module 'peripheral_registers__parameterized9' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:53]
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 4 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 0 - type: integer 
+WARNING: [Synth 8-506] null port 'addr' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:47]
+	Parameter C_DATA_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'peripheral_registers__parameterized9' (21#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:53]
+WARNING: [Synth 8-6778] Component port with null array found, Will be ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:142]
+INFO: [Synth 8-256] done synthesizing module 'generic_peripheral__parameterized9' (21#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:60]
+	Parameter C_ADDR_BASE bound to: 6'b000001 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 4 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'generic_peripheral' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:29' bound to instance 'IRQ_F_REGISTER' of component 'generic_peripheral' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/IO.vhd:542]
+INFO: [Synth 8-638] synthesizing module 'generic_peripheral__parameterized11' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:60]
+	Parameter C_ADDR_BASE bound to: 6'b000001 
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 4 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 1 - type: integer 
+WARNING: [Synth 8-6774] Null subtype or type declaration found [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:64]
+	Parameter C_ADDR_BASE bound to: 6'b000001 
+	Parameter C_ADDR_PERI_WIDTH bound to: 0 - type: integer 
+WARNING: [Synth 8-506] null port 'addr_peri' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:77]
+INFO: [Synth 8-3491] module 'peripheral_address_decoder' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:28' bound to instance 'DECODER' of component 'peripheral_address_decoder' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'peripheral_address_decoder__parameterized11' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:42]
+	Parameter C_ADDR_BASE bound to: 6'b000001 
+	Parameter C_ADDR_PERI_WIDTH bound to: 0 - type: integer 
+WARNING: [Synth 8-506] null port 'addr_peri' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'peripheral_address_decoder__parameterized11' (21#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_address_decoder.vhd:42]
+WARNING: [Synth 8-6778] Component port with null array found, Will be ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:118]
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 4 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 1 - type: integer 
+WARNING: [Synth 8-506] null port 'addr' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:101]
+INFO: [Synth 8-3491] module 'peripheral_registers' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:29' bound to instance 'PERIPHERAL' of component 'peripheral_registers' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:124]
+INFO: [Synth 8-638] synthesizing module 'peripheral_registers__parameterized11' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:53]
+	Parameter C_DATA_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_DATA_REG_WIDTH bound to: 4 - type: integer 
+	Parameter C_REGISTER_COUNT bound to: 1 - type: integer 
+	Parameter ENABLE_DIRECT_INPUT bound to: 1 - type: integer 
+WARNING: [Synth 8-506] null port 'addr' ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:47]
+	Parameter C_DATA_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'basic_register' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/basic_register.vhd:27' bound to instance 'REG_INST' of component 'basic_register' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'peripheral_registers__parameterized11' (21#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/peripheral_registers.vhd:53]
+WARNING: [Synth 8-6778] Component port with null array found, Will be ignored [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:142]
+INFO: [Synth 8-256] done synthesizing module 'generic_peripheral__parameterized11' (21#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/generic_peripheral.vhd:60]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_COUNT bound to: 9 - type: integer 
+INFO: [Synth 8-3491] module 'bus_selector' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/bus_selector.vhd:26' bound to instance 'DATA_OUT_SELECTOR' of component 'bus_selector' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/IO.vhd:594]
+INFO: [Synth 8-638] synthesizing module 'bus_selector' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/bus_selector.vhd:41]
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_COUNT bound to: 9 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'bus_selector' (22#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/bus_selector.vhd:41]
+	Parameter C_DATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_COUNT bound to: 9 - type: integer 
+INFO: [Synth 8-3491] module 'async_bus_selector' declared at 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/async_bus_selector.vhd:25' bound to instance 'READY_SELECTOR' of component 'async_bus_selector' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/IO.vhd:614]
+INFO: [Synth 8-638] synthesizing module 'async_bus_selector' [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/async_bus_selector.vhd:38]
+	Parameter C_DATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_COUNT bound to: 9 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'async_bus_selector' (23#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/async_bus_selector.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'IO' (24#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/IO.vhd:60]
+INFO: [Synth 8-256] done synthesizing module 'top' (25#1) [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/sources_1/imports/sources/top.vhd:43]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1013.555 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1013.555 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1013.555 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1013.555 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/constrs_1/imports/sources/Nexys4_Master.xdc]
+Finished Parsing XDC File [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/constrs_1/imports/sources/Nexys4_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.srcs/constrs_1/imports/sources/Nexys4_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1013.555 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  RAM64X1S => RAM64X1S (RAMS64E): 8 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1013.555 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1013.555 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1013.555 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1013.555 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1013.555 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   24 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     16 Bit         XORs := 1     
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      5 Bit         XORs := 1     
+	   3 Input      1 Bit         XORs := 8     
+	   2 Input      1 Bit         XORs := 21    
++---Registers : 
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 24    
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 6     
+	                2 Bit    Registers := 22    
+	                1 Bit    Registers := 32    
++---Muxes : 
+	  65 Input   32 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 16    
+	   8 Input    8 Bit        Muxes := 3     
+	 129 Input    8 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 5     
+	   2 Input    4 Bit        Muxes := 5     
+	   4 Input    4 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 42    
+	   6 Input    1 Bit        Muxes := 1     
+	   5 Input    1 Bit        Muxes := 1     
+	   9 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1013.555 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping	Report
++------------+-----------------------+---------------+----------------+
+|Module Name | RTL Object            | Depth x Width | Implemented As | 
++------------+-----------------------+---------------+----------------+
+|ControlUnit | alu_op_i              | 32x4          | LUT            | 
+|ControlUnit | next_opcode_addr_i    | 32x6          | LUT            | 
+|Processor   | CU/alu_op_i           | 32x4          | LUT            | 
+|Processor   | CU/next_opcode_addr_i | 32x6          | LUT            | 
++------------+-----------------------+---------------+----------------+
+
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
+-------NONE-------
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1013.555 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1107.641 ; gain = 94.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1119.508 ; gain = 105.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1119.508 ; gain = 105.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1119.508 ; gain = 105.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1119.508 ; gain = 105.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1119.508 ; gain = 105.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1119.508 ; gain = 105.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1119.508 ; gain = 105.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFR     |     1|
+|2     |CARRY4   |    96|
+|3     |LUT1     |    28|
+|4     |LUT2     |    84|
+|5     |LUT3     |    29|
+|6     |LUT4     |   113|
+|7     |LUT5     |    79|
+|8     |LUT6     |   220|
+|9     |MUXF7    |     6|
+|10    |RAM64X1S |     8|
+|11    |FDCE     |   267|
+|12    |FDPE     |     8|
+|13    |FDRE     |   374|
+|14    |IBUF     |    23|
+|15    |OBUF     |    31|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1119.508 ; gain = 105.953
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:35 . Memory (MB): peak = 1119.508 ; gain = 105.953
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1119.508 ; gain = 105.953
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1119.508 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 111 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1124.352 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  RAM64X1S => RAM64X1S (RAMS64E): 8 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+231 Infos, 28 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 1124.352 ; gain = 110.797
+INFO: [Common 17-1381] The checkpoint 'C:/Users/robbe/Documents/School/2020-2021/DigitaalOntwerp/Labo/DigitaalOntwerp1/Labo5/Labo5.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 12 17:26:07 2020...
